@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | xyel的Hexo小站</title>
+  <title>[jatvisjCTF]Basic | xyel的Hexo小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xyel的Hexo小站">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="[jatvisjCTF]Basic靶场：https:&#x2F;&#x2F;www.jarvisoj.com&#x2F;challenges 选择其中basic 01.base64? GUYDIMZVGQ2DMN3CGRQTONJXGM3TINLGG42DGMZXGM3TINLGGY4DGNBXGYZTGNLGGY3DGNBWMU3WI&#x3D;&#x3D;&#x3D;  一开始还真去解base64了  丢人  首先看有没有符号， base64和base">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[jatvisjCTF]Basic">
+<meta property="og:url" content="http://example.com/2020/09/11/jatvisjCTF-Basic/index.html">
 <meta property="og:site_name" content="xyel的Hexo小站">
+<meta property="og:description" content="[jatvisjCTF]Basic靶场：https:&#x2F;&#x2F;www.jarvisoj.com&#x2F;challenges 选择其中basic 01.base64? GUYDIMZVGQ2DMN3CGRQTONJXGM3TINLGG42DGMZXGM3TINLGGY4DGNBXGYZTGNLGGY3DGNBWMU3WI&#x3D;&#x3D;&#x3D;  一开始还真去解base64了  丢人  首先看有没有符号， base64和base">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-11T11:18:25.000Z">
+<meta property="article:modified_time" content="2020-09-11T11:18:51.813Z">
 <meta property="article:author" content="xyel">
 <meta name="twitter:card" content="summary">
   
@@ -134,76 +138,637 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-jatvisjCTF-Basic" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      [jatvisjCTF]Basic
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/11/jatvisjCTF-Basic/" class="archive-article-date">
+
+        
+        <a href="/2020/09/11/jatvisjCTF-Basic/" class="archive-article-date">
   	<time datetime="2020-09-11T11:18:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/11/jatvisjCTF-Basic/">[jatvisjCTF]Basic</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jatvisjCTF-Basic"><a href="#jatvisjCTF-Basic" class="headerlink" title="[jatvisjCTF]Basic"></a>[jatvisjCTF]Basic</h1><p>靶场：<a target="_blank" rel="noopener" href="https://www.jarvisoj.com/challenges">https://www.jarvisoj.com/challenges</a></p>
+<p>选择其中basic</p>
+<h2 id="01-base64"><a href="#01-base64" class="headerlink" title="01.base64?"></a>01.base64?</h2><blockquote>
+<p>GUYDIMZVGQ2DMN3CGRQTONJXGM3TINLGG42DGMZXGM3TINLGGY4DGNBXGYZTGNLGGY3DGNBWMU3WI===</p>
+</blockquote>
+<p>一开始还真去解base64了  丢人</p>
+<blockquote>
+<p>首先看有没有符号，</p>
+<p>base64和base32都以’=‘作为空白补足符符号，</p>
+<p>如果结尾没有’=’有可能是base16。</p>
+<p>如果出现了+和/，那么一定是base64。</p>
+<p>然后看大小写字母，</p>
+<p>如果有大写有小写就一定是base64。</p>
+<p>如果全是大写的情况就看具体字母有没有F之后的字母出现，</p>
+<p>因为base16就是16进制，字母部分只到F。</p>
+<p>当然这个base32的数字部分只有2-7，</p>
+<p>不过数字一般不好判断，所以这里不推荐用数字进行判断。</p>
+</blockquote>
+<blockquote>
+<p>504354467b4a7573745f743373745f683476335f66346e7d</p>
+</blockquote>
+<p>hex解密得到flag</p>
+<blockquote>
+<p>PCTF{Just_t3st_h4v3_f4n}</p>
+</blockquote>
+<h2 id="02-关于USS-Lab"><a href="#02-关于USS-Lab" class="headerlink" title="02.关于USS.Lab"></a>02.关于USS.Lab</h2><blockquote>
+<p>USS的英文全称是什么，请全部小写并使用下划线连接_，并在外面加上PCTF{}之后提交</p>
+</blockquote>
+<p>百度USS Lab</p>
+<blockquote>
+<p>Ubiquitous System Security</p>
+</blockquote>
+<p>得到flag</p>
+<blockquote>
+<p>PCTF{ubiquitous_system_security}</p>
+</blockquote>
+<h2 id="03-veryeasy"><a href="#03-veryeasy" class="headerlink" title="03.veryeasy"></a>03.veryeasy</h2><blockquote>
+<p>使用基本命令获取flag</p>
+</blockquote>
+<p>下载打开记事本</p>
+<blockquote>
+<p>PCTF{strings_i5_3asy_isnt_i7}</p>
+</blockquote>
+<h2 id="04-段子"><a href="#04-段子" class="headerlink" title="04.段子"></a>04.段子</h2><blockquote>
+<p>程序猿圈子里有个非常著名的段子：</p>
+<p>手持两把锟斤拷，口中疾呼烫烫烫。</p>
+<p>请提交其中”锟斤拷”的十六进制编码。(大写)</p>
+<p>FLAG: PCTF{你的答案}</p>
+</blockquote>
+<p>直接百度</p>
+<blockquote>
+<p>锟斤拷乱码：<br>源于GBK字符集和Unicode字符集之间的转换问题。<br>Unicode和老编码体系的转化过程中，肯定有一些字，&gt;<br>用Unicode是没法表示的，Unicode官方用了一个占位符来表示这些文字，<br>这就是：U+FFFD REPLACEMENT CHARACTER。<br>那么U+FFFD的UTF-8编码出来，恰好是 ‘\xef\xbf\xbd’。<br>如果这个’\xef\xbf\xbd’，重复多次，<br>例如 ‘\xef\xbf\xbd\xef\xbf\xbd’，<br>然后放到GBK/CP936/GB2312/GB18030的环境中显示的话，<br>一个汉字2个字节，最终的结果就是：锟斤拷——锟(0xEFBF)，斤（0xBDEF），拷（0xBFBD）。</p>
+</blockquote>
+<blockquote>
+<p>FLAG: PCTF{EFBFBDEFBFBD}</p>
+</blockquote>
+<h2 id="05-手贱"><a href="#05-手贱" class="headerlink" title="05.手贱"></a>05.手贱</h2><blockquote>
+<p>某天A君的网站被日，管理员密码被改，死活登不上，去数据库一看，</p>
+<p>啥，这密码md5不是和原来一样吗？为啥登不上咧？</p>
+<p>d78b6f302l25cdc811adfe8d4e7c9fd34</p>
+<p>请提交PCTF{原来的管理员密码}</p>
+</blockquote>
+<p>cmd5</p>
+<blockquote>
+<p>查询结果： 密文无法识别或无法处理，请确认密文类型是否选择正确。 </p>
+</blockquote>
+<p>somd5</p>
+<blockquote>
+<p>d78b6f302l25cdc811adfe8d4e7c9fd</p>
+</blockquote>
+<p>再查下去</p>
+<blockquote>
+<p>md5</p>
+<p>md5_16:be236eec58bdf663<br>md5:c144d7a8be236eec58bdf6631859b199<br>sha1:cd67e3a60828ef959913269fafbd3ff1e9773035</p>
+</blockquote>
+<p>肯定不对思路错了</p>
+<p>再一数</p>
+<p>？？？33位</p>
+<p>众所周知md5只有16和32</p>
+<p>那肯定多了一位</p>
+<p>多一位的话一个一个试过去</p>
+<blockquote>
+<p>d78b6f30225cdc811adfe8d4e7c9fd34</p>
+</blockquote>
+<blockquote>
+<p>查询结果：</p>
+<p>hack</p>
+</blockquote>
+<blockquote>
+<p> FLAG: PCTF{hack}</p>
+</blockquote>
+<p><code>大佬writeup</code></p>
+<blockquote>
+<p>md5值只有0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f</p>
+<p>哪来的 l ?</p>
+</blockquote>
+<h2 id="06-美丽的实验室logo"><a href="#06-美丽的实验室logo" class="headerlink" title="06.美丽的实验室logo"></a>06.美丽的实验室logo</h2><blockquote>
+<p>出题人丢下个logo就走了，大家自己看着办吧</p>
+</blockquote>
+<p>查看图片源代码  发现有PCTF字样</p>
+<p>方向往隐写上走</p>
+<blockquote>
+<p>stegsolve里面浏览frame</p>
+<p>得到flag</p>
+</blockquote>
+<blockquote>
+<p>PCTF{You_are_R3ally_Car3ful}</p>
+</blockquote>
+<h2 id="07-veryeasyRSA"><a href="#07-veryeasyRSA" class="headerlink" title="07.veryeasyRSA"></a>07.veryeasyRSA</h2><blockquote>
+<p>已知RSA公钥生成参数：</p>
+<p>p = 3487583947589437589237958723892346254777 </p>
+<p>q = 8767867843568934765983476584376578389</p>
+<p>e = 65537</p>
+<p>求d = </p>
+<p>请提交PCTF{d}</p>
+<p>Hint1: 有好多小伙伴问d提交什么格式的，现在明确一下，提交十进制的d</p>
+</blockquote>
+<p>这个鬼才会</p>
+<p>查资料</p>
+<blockquote>
+<p>公钥与密钥的产生</p>
+<p>　　假设Alice想要通过一个不可靠的媒体接收Bob的一条私人讯息。</p>
+<p>　　她可以用以下的方式来产生一个<strong>公钥</strong>和一个<strong>私钥</strong>：</p>
+<ol>
+<li>随意选择两个大的质数<em>p</em>和<em>q</em>，<em>p</em>不等于<em>q</em>，计算<em>N</em>=<em>pq</em>。</li>
+<li>根据欧拉函数，求得r = (<em>p</em>-1)(<em>q</em>-1)</li>
+<li>选择一个小于 r 的整数 <em>e</em>，求得 e 关于模 r 的模反元素，命名为d。（模反元素存在，当且仅当e与r互质）</li>
+<li>将 <em>p</em> 和 <em>q</em> 的记录销毁。</li>
+</ol>
+<p>*(N,e)<em>是公钥，</em>(N,d)*是私钥。Alice将她的公钥(N,e)传给Bob，而将她的私钥(N,d)藏起来。</p>
+</blockquote>
+<blockquote>
+<p>解密消息<br>Alice得到Bob的消息c后就可以利用她的密钥d来解码。她可以用以下这个公式来将c转换为n：</p>
+<p>　　cd ≡ n (mod N)</p>
+<p>得到n后，她可以将原来的信息m重新复原。</p>
+<p>解码的原理是：</p>
+<p>　　cd ≡ n e·d(mod N)</p>
+<p>以及ed ≡ 1 (mod p-1)和ed ≡ 1 (mod q-1)。由费马小定理可证明（因为p和q是质数）</p>
+<p>　　n e·d ≡ n (mod p) 　　和 　n e·d ≡ n (mod q)</p>
+<p>这说明（因为p和q是不同的质数，所以p和q互质）</p>
+<p>　　n e·d ≡ n (mod pq)</p>
+</blockquote>
+<p>越看越像语言类练习题</p>
+<p>现学现卖C</p>
+<blockquote>
+<p>错误：常亮太大</p>
+</blockquote>
+<p>脑壳一疼 已经用了unsigned long long了 die</p>
+<p>看看别人的writeup吧</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">p = <span class="number">3487583947589437589237958723892346254777</span></span><br><span class="line"></span><br><span class="line">q = <span class="number">8767867843568934765983476584376578389</span></span><br><span class="line"></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line"></span><br><span class="line">d = gmpy2.invert(e,(p<span class="number">-1</span>)*(q<span class="number">-1</span>))</span><br><span class="line"></span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>Python就可以计算这么大的数</p>
+<blockquote>
+<p>d=19178568796155560423675975774142829153827883709027717723363077606260717434369</p>
+</blockquote>
+<blockquote>
+<p>PCTF{19178568796155560423675975774142829153827883709027717723363077606260717434369}</p>
+</blockquote>
+<p><code>啊这  又看到了dalao提供的简易计算软件</code></p>
+<p><code>RSA Tool</code></p>
+<p>提供p,q,n,d,e即可完成计算</p>
+<p>注意：这里e使用16进制</p>
+<blockquote>
+<p>输入p,q</p>
+<p>将65537转换为0x10001（0x可不打）</p>
+<p>输入e</p>
+<p>calc D</p>
+<p>得到d</p>
+</blockquote>
+<h2 id="08-神秘的文件"><a href="#08-神秘的文件" class="headerlink" title="08.神秘的文件"></a>08.神秘的文件</h2><blockquote>
+<p>出题人太懒，还是就丢了个文件就走了，你能发现里面的秘密吗？</p>
+</blockquote>
+<blockquote>
+<p>haha.f38a74f55b4e193561d1b707211cf7eb</p>
+</blockquote>
+<p>后缀32位  先来莽md5解密  啥也没有</p>
+<p>记事本打开  可没有搜到flag/ctf类似的句子</p>
+<p>参考writeup</p>
+<blockquote>
+<p><code>binwalk</code> 文件能发现是一个磁盘文件，直接 <code>mount</code> 到一个文件夹就能看到一堆文件，</p>
+<p>写个 <code>shell</code> 按顺序 <code>cat</code> 出来，连起来就是 <code>flag</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;mkdir mnt &amp;&amp; mount haha.f38a74f55b4e193561d1b707211cf7eb mnt</span><br><span class="line">&gt;cd mnt</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;# coding &#x3D; utf-8</span><br><span class="line">&gt;string &#x3D; &#39;&#39;</span><br><span class="line">&gt;for i in range(0,254):</span><br><span class="line">&gt;f &#x3D; open(str(i))</span><br><span class="line">&gt;tmp &#x3D; f.readline()</span><br><span class="line">&gt;string +&#x3D; tmp</span><br><span class="line">&gt;f.close</span><br><span class="line"></span><br><span class="line">&gt;print string</span><br></pre></td></tr></table></figure>
 
+<p>拿到 flag</p>
+</blockquote>
+<p>恕我还是没看懂emmmmmm</p>
+<p>linux毕竟入门都不算</p>
+<p>拉进windows</p>
+<p>copy “*” “result.txt”</p>
+<p>得到错误结果</p>
+<blockquote>
+<p>Haf.But the ciontent is lspilted ine pieces ca n you makes the pieceys togethers. Now thist is the fleag PCTF{P1hm3c3_7oghte r_i7}. Thei rest is usp to you.  Cheer up, eboy.asy,a and I kno w you can eeasily decxompress oft it and fi2nd the con tent in it</p>
+</blockquote>
+<blockquote>
+<p>\Desktop\mnt\249<br>\Desktop\mnt\25<br>\Desktop\mnt\250<br>\Desktop\mnt\251<br>\Desktop\mnt\252<br>\Desktop\mnt\253<br>\Desktop\mnt\26</p>
+</blockquote>
+<p>批量复制时发现复制错了  排序不对</p>
+<p>再次百度</p>
+<blockquote>
+<p>现在就想换个思路，全部用批处理不知道怎么实现如下过程的操作： 比如当前路径是： d:\test\    ，里面有1.ts - 1200.ts ，共1200个文件<br>1、自动将文件名全部重命名：（补充 0）<br>             0-9  添加三个0 “000” ，0000.ts、0001.ts……<br>           10-99  添加两个0 “00” ，0010.ts、0099.ts……<br>         100-999  添加一个0  “0” ，0100.ts、0999.ts……<br>       1000-9999 保持原来编号，不变<br>2、将指定范围编号的文件<strong>剪切</strong>到当前路径下的指定文件夹，比如下面固定的格式：<br>  0000.ts - 0400.ts  剪切到当前路径下 ”01“文件夹  d:\test\01<br>  0400.ts - 0800.ts  剪切到当前路径下 ”02“文件夹  d:\test\02<br>  0800.ts - 1200.ts  剪切到当前路径下 ”03“文件夹  d:\test\03<br>3、接着再用copy命令来合成相应的文件，这样就容易且速度很快了，比如：<br>  copy /b d:\test\01*.ts  d:\test\out_01.ts<br>  copy /b d:\test\02*.ts  d:\test\out_02.ts<br>  copy /b d:\test\03*.ts  d:\test\out_03.ts </p>
+</blockquote>
+<p>然后发现windows 批量重命名只能（1）（2）</p>
+<p>啊这</p>
+<p>分组 0-9 10-99 100-253  输出3个txt  再将3个txt拼接  完成</p>
+<blockquote>
+<p>Haha ext2 file system is easy, and I know you can easily decompress of it and find the content in it.But the content is spilted in pieces can you make the pieces together. Now this is the flag PCTF{P13c3_7oghter_i7}. The rest is up to you. Cheer up, boy.</p>
+</blockquote>
+<blockquote>
+<p>PCTF{P13c3_7oghter_i7}</p>
+</blockquote>
+<h2 id="09-公倍数"><a href="#09-公倍数" class="headerlink" title="09.公倍数"></a>09.公倍数</h2><blockquote>
+<p>请计算1000000000以内3或5的倍数之和。</p>
+<p>如：10以内这样的数有3,5,6,9，和是23</p>
+<p>请提交PCTF{你的答案}</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> p = <span class="number">1000000000</span>;</span><br><span class="line"><span class="comment">//	p/3=333333333.3333333</span></span><br><span class="line"><span class="comment">//  p/5=200000000</span></span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> suma = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> sumb = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//使用suma+sumb能显著提升这个破电脑的计算速度</span></span><br><span class="line">	p = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (p = <span class="number">0</span>; p &lt; <span class="number">1000000000</span>; p++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p % <span class="number">3</span> == <span class="number">0</span>) &#123;</span><br><span class="line">			suma += p;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	p = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (p = <span class="number">0</span>; p &lt; <span class="number">1000000000</span>; p++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (p % <span class="number">3</span> != <span class="number">0</span>) &#123;</span><br><span class="line">				sumb += p;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	sum = suma + sumb;</span><br><span class="line"></span><br><span class="line">	printf_s(<span class="string">&quot;%I64d&quot;</span>, sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>PCTF{233333333166666668}</p>
+</blockquote>
+<h2 id="10-Easy-Crackme"><a href="#10-Easy-Crackme" class="headerlink" title="*10.Easy Crackme"></a>*10.Easy Crackme</h2><blockquote>
+<p>都说逆向挺难的，但是这题挺容易的，反正我不会，大家来挑战一下吧~~:)</p>
+</blockquote>
+<blockquote>
+<p>这我暂时还不会</p>
+</blockquote>
+<h2 id="11-Select"><a href="#11-Select" class="headerlink" title="11.Select"></a>11.Select</h2><blockquote>
+<p>传说中的签到题</p>
+</blockquote>
+<p>抓包</p>
+<blockquote>
+<p>Secret: Welcome_to_phrackCTF_2016</p>
+</blockquote>
+<p>根据一步得到肯定是错的   等等等等  这题真就一步</p>
+<blockquote>
+<p>PCTF{Welcome_to_phrackCTF_2016}</p>
+</blockquote>
+<h2 id="12-爱吃培根的出题人"><a href="#12-爱吃培根的出题人" class="headerlink" title="12.爱吃培根的出题人"></a>12.爱吃培根的出题人</h2><blockquote>
+<p>听说你也喜欢吃培根？那我们一起来欣赏一段培根的介绍吧：</p>
+<p>bacoN is one of aMerICa’S sWEethEartS. it’s A dARlinG, SuCCulEnt fOoD tHAt PaIRs FlawLE</p>
+<p>什么，不知道要干什么？上面这段巨丑无比的文字，为什么会有大小写呢？你能发现其中的玄机吗？</p>
+<p>提交格式：PCTF{你发现的玄机}</p>
+</blockquote>
+<p>尝试提取其中所有大写字母</p>
+<blockquote>
+<p>NMCSWEESAARGSCCEODHAPRFlLE</p>
+</blockquote>
+<p>???</p>
+<blockquote>
+<p>bacoisoneofaerIasethartitsdlinuulntfottaIslaw</p>
+</blockquote>
+<p>??????</p>
+<blockquote>
+<p>N is one of MC’S WEES. it’s A ARG, SCCE OD HA PR FLE</p>
+</blockquote>
+<p>????????????</p>
+<p>换思路  答案里应该要有flag字样  我们标出所有 f l a g</p>
+<blockquote>
+<p>b<code>a</code>coN is one of <code>a</code>MerIC<code>a</code>‘S sWEethE<code>a</code>rtS. it’s <code>A</code> d<code>A</code>R<code>l</code>in<code>G</code>, SuCCulEnt <code>f</code>OoD tH<code>A</code>t P<code>a</code>IRs <code>Fla</code>w<code>L</code>E</p>
+</blockquote>
+<p>????????????????????????</p>
+<p>我认输  我去看writeup</p>
+<p>阿西  居然有叫培根密码emmmmmm</p>
+<blockquote>
+<p>bacoN //is one// of aMe//rICa’S// sWEet//hEart//S. it’s A //dARli//nG, SuC//CulEn//t fOoD// tHAt P//aIRs F//lawLE<br>aaaab    aaaaa   aaaba    abbab   abbaa  abaaa  baaab       abbaa  abbab    baaba  aabab    abbab   abbab   aaabb<br>B             A          C            N           M          I           R               M         N            S          F            N            N          D</p>
+</blockquote>
+<blockquote>
+<p>PCTF{BACNMIRMNSFNND}</p>
+</blockquote>
+<p>Wrong answer!</p>
+<p>???</p>
+<blockquote>
+<p>PCTF{bacnmirmnsfnnd}</p>
+</blockquote>
+<p>Wrong answer!</p>
+<p>??????</p>
+<p>猜测fnnd为food</p>
+<p>那么bacnm应该是bacon</p>
+<blockquote>
+<p>PCTF{<code>bacon</code>irmns<code>food</code>}</p>
+</blockquote>
+<p>尝试将irmns也往后一个字母</p>
+<blockquote>
+<p>PCTF{<code>bacon</code>jsnot<code>food</code>}</p>
+</blockquote>
+<p>终于看懂</p>
+<blockquote>
+<p>PCTF{<code>baconisnotfood</code>}</p>
+</blockquote>
+<h2 id="13-easyRSA"><a href="#13-easyRSA" class="headerlink" title="13.easyRSA"></a>13.easyRSA</h2><p>这里easyRSA也采用RSATool</p>
+<blockquote>
+<p>还记得veryeasy RSA吗？是不是不难？那继续来看看这题吧，这题也不难。</p>
+<p>已知一段RSA加密的信息为：0xdc2eeeb2782c且已知加密所用的公钥：</p>
+<p>(N=322831561921859 e = 23)</p>
+<p>请解密出明文，提交时请将数字转化为ascii码提交</p>
+<p>比如你解出的明文是0x6162，那么请提交字符串ab</p>
+<p>提交格式:PCTF{明文字符串}</p>
+</blockquote>
+<blockquote>
+<p>输入N，e</p>
+<p>此处e换位16进制0x17</p>
+<p>Factor N ，得到p，q</p>
+<p>calc D</p>
+<p>然后点Test</p>
+<p>先在明文输入6162</p>
+<p>加密Encrypt</p>
+<p>成功</p>
+<p>然后在密文区输入10进制的密文</p>
+<p>242094131279916</p>
+<p>解密Decrypt</p>
+<p>直接得到字符串3a5Y</p>
+</blockquote>
+<blockquote>
+<p>PCTF{3a5Y}</p>
+</blockquote>
+<h2 id="14-ROPGadget"><a href="#14-ROPGadget" class="headerlink" title="*14.ROPGadget"></a>*14.ROPGadget</h2><blockquote>
+<p>都说学好汇编是学习PWN的基础，以下有一段ROPGadget的汇编指令序列，</p>
+<p>请提交其十六进制机器码(大写，不要有空格)</p>
+<p>XCHG EAX,ESP</p>
+<p>RET</p>
+<p>MOV ECX,[EAX]</p>
+<p>MOV [EDX],ECX</p>
+<p>POP EBX</p>
+<p>RET</p>
+</blockquote>
+<blockquote>
+<p>一脸懵逼</p>
+</blockquote>
+<h2 id="15-取证"><a href="#15-取证" class="headerlink" title="15.取证"></a>15.取证</h2><blockquote>
+<p>有一款取证神器如下图所示，可以从内存dump里分析出TureCrypt的密钥，你能找出这款软件的名字吗？</p>
+<p>名称请全部小写。</p>
+</blockquote>
+<p>打开kali找取证工具</p>
+<p>试了一遍不对emmmmm</p>
+<p>百度内存取证</p>
+<p>得到flag</p>
+<blockquote>
+<p>PCTF{volatility}</p>
+</blockquote>
+<h2 id="16-熟悉的声音"><a href="#16-熟悉的声音" class="headerlink" title="16.熟悉的声音"></a>16.熟悉的声音</h2><blockquote>
+<p>两种不同的元素，如果是声音的话，听起来是不是很熟悉呢，</p>
+<p>据说前不久神盾局某位特工领便当了大家都很惋惜哦</p>
+<p>XYYY YXXX XYXX XXY XYY X XYY YX YYXX</p>
+<p>请提交PCTF{你的答案}</p>
+</blockquote>
+<p>玩过 tick tock 对摩斯电码有基础了解了</p>
+<blockquote>
+<p>XYYY YXXX XYXX XXY XYY X XYY YX YYXX</p>
+<p>J     B          L      U   W  E    W   N     Z  //X  ·  Y  -</p>
+<p>B      J          Y      G   D   T    D   A        //Y  ·   X  -</p>
+</blockquote>
+<blockquote>
+<p>JBLUWEWNZ</p>
+<p>BJYGDTDA</p>
+</blockquote>
+<p>然而flag并不是这两个</p>
+<p>看了writeup</p>
+<p>是凯撒密码</p>
+<p>移位20得到</p>
+<blockquote>
+<p>PHRACKCTF</p>
+</blockquote>
+<p>CTF基本确认是答案</p>
+<p>得到flag</p>
+<blockquote>
+<p>PCTF{PHRACKCTF}</p>
+</blockquote>
+<h2 id="17-Baby’s-Crack"><a href="#17-Baby’s-Crack" class="headerlink" title="*17.Baby’s Crack"></a>*17.Baby’s Crack</h2><blockquote>
+<p>既然是逆向题，我废话就不多说了，自己看着办吧。</p>
+</blockquote>
+<blockquote>
+<p>既然是逆向题，我废话就不多说了。（搞得我会一样）</p>
+</blockquote>
+<h2 id="18-Help"><a href="#18-Help" class="headerlink" title="18.Help!!"></a>18.Help!!</h2><blockquote>
+<p>出题人硬盘上找到一个神秘的压缩包，里面有个word文档，可是好像加密了呢~让我们一起分析一下吧！</p>
+</blockquote>
+<p>啊这</p>
+<p>压缩包仔仔细细看了一遍没任何问题</p>
+<p>图片仔仔细细搜了一遍没任何问题</p>
+<p>word仔仔细细分析了一遍没任何问题</p>
+<p>然后创建了一个一摸一样的空word</p>
+<p>发现空word比图片来的小</p>
+<p>那么word里面肯定还有东西</p>
+<p>将word后缀转换成.zip</p>
+<blockquote>
+<p> //这个破方法最早经常被我用来看音频文件有没有成功添加到ppt文件内还是引用外部</p>
+</blockquote>
+<p>在media文件夹内看到图片2</p>
+<blockquote>
+<p>PCTF{You_Know_moR3_4boUt_woRd}</p>
+</blockquote>
+<p><code>dalao writeup</code></p>
+<p>本题还考察了伪加密</p>
+<p>/*但我的360压缩根本没有提示需要密码</p>
+<p>啊果然  windows资源管理器解压的话就提示需要密码</p>
+<p>我说这题怎么值150分*/</p>
+<p>先mark一下回头再来看</p>
+<h3 id="伪加密"><a href="#伪加密" class="headerlink" title="*伪加密"></a>*伪加密</h3><h2 id="19-Shellcode"><a href="#19-Shellcode" class="headerlink" title="19.Shellcode"></a>19.Shellcode</h2><blockquote>
+<p>作为一个黑客，怎么能不会使用shellcode?</p>
+<p>这里给你一段shellcode，你能正确使用并最后得到flag吗？</p>
+</blockquote>
+<p>txt打开发现0-z的长文本</p>
+<p>考虑加密</p>
+<p>主流算法如sha128 base64等通通失败</p>
+<p>卒</p>
+<p>dalao writeup</p>
+<blockquote>
+<p>answer：用github上现成的shellcode执行器。跑一下就弹窗flag了。</p>
+</blockquote>
+<p>???啊这</p>
+<blockquote>
+<p>PCTF{Begin_4_good_pwnn3r}</p>
+</blockquote>
+<h2 id="20-A-Piece-Of-Cake"><a href="#20-A-Piece-Of-Cake" class="headerlink" title="20.A Piece Of Cake"></a>20.A Piece Of Cake</h2><blockquote>
+<p>nit yqmg mqrqn bxw mtjtm nq rqni fiklvbxu mqrqnl xwg dvmnzxu lqjnyxmt xatwnl, rzn nit uxnntm xmt zlzxuuk mtjtmmtg nq xl rqnl. nitmt vl wq bqwltwlzl qw yivbi exbivwtl pzxuvjk xl mqrqnl rzn nitmt vl atwtmxu xamttetwn xeqwa tsftmnl, xwg nit fzruvb, nixn mqrqnl ntwg nq gq lqet qm xuu qj nit jquuqyvwa: xbbtfn tutbnmqwvb fmqamxeevwa, fmqbtll gxnx qm fiklvbxu ftmbtfnvqwl tutbnmqwvbxuuk, qftmxnt xznqwqeqzluk nq lqet gtamtt, eqdt xmqzwg, qftmxnt fiklvbxu fxmnl qj vnltuj qm fiklvbxu fmqbtlltl, ltwlt xwg exwvfzuxnt nitvm twdvmqwetwn, xwg tsivrvn vwntuuvatwn rtixdvqm - tlftbvxuuk rtixdvqm yivbi evevbl izexwl qm qnitm xwvexul. juxa vl lzrlnvnzntfxllvldtmktxlkkqzaqnvn. buqltuk mtuxntg nq nit bqwbtfn qj x mqrqn vl nit jvtug qj lkwnitnvb rvquqak, yivbi lnzgvtl twnvnvtl yiqlt wxnzmt vl eqmt bqefxmxrut nq rtvwal nixw nq exbivwtl.</p>
+<p>提交格式：PCTF{flag}</p>
+</blockquote>
+<p>emmmmmmm这啥</p>
+<p>想想最近出现过的凯撒密码</p>
+<p>先试试</p>
+<p>并不是</p>
+<p>可能密码学我是真的差</p>
+<p>看dalao writeup</p>
+<p>？？？啊这</p>
+<blockquote>
+<p>answer：在线解密，得到flag</p>
+</blockquote>
+<blockquote>
+<p>the word robot can refer to both physical robots and virtual software agents, but the latter are usually referred to as bots. there is no consensus on which machines qualify as robots but there is general agreement among experts, and the public, that robots tend to do some or all of the following: accept electronic programming, process data or physical perceptions electronically, operate autonomously to some degree, move around, operate physical parts of itself or physical processes, sense and manipulate their environment, and exhibit intelligent behavior - especially behavior which mimics humans or other animals. flag is substitutepassisveryeasyyougotit. closely related to the concept of a robot is the field of synthetic biology, which studies entities whose nature is more comparable to beings than to machines.</p>
+</blockquote>
+<blockquote>
+<p>参考其他writeup得到这题的考点是<code>词频分析</code></p>
+</blockquote>
+<blockquote>
+<p>PCTF{substitutepassisveryeasyyougotit}</p>
+</blockquote>
+<h2 id="21-字符串"><a href="#21-字符串" class="headerlink" title="21.-.-字符串"></a>21.-.-字符串</h2><blockquote>
+<p>请选手观察以下密文并转换成flag形式</p>
+<p>..-. .-.. .- –. ….. ..— ..— —– .—- —.. -.. -…. -…. ….. …– —.. –… -.. .—- -.. .- —-. …– .—- —.. .—- ..— -… –… –… –… -…. …– ….- .—- —–</p>
+<p>flag形式为32位大写md5</p>
+<p>题目来源：CFF2016</p>
+</blockquote>
+<p>都把·和-给你了</p>
+<p>这不是摩斯电码是啥</p>
+<blockquote>
+<p>..-. .-.. .- –. ….. ..— ..— —– .—- —.. -.. -….<br>F    L   A   G   5     2      2     0     1     8    D    6<br>-…. ….. …– —.. –… -.. .—- -.. .- —-. …– .—-<br>6      5     3     8    7     D     1   D  A    9     3     1<br>—.. .—- ..— -… –… –… –… -…. …– ….-<br>8      1     2     B    7    7      7     6     3     4<br>.—- —–<br>1      0</p>
+</blockquote>
+<blockquote>
+<p>flag:522018D665387D1DA931812B77763410</p>
+</blockquote>
+<h2 id="22-德军的密码"><a href="#22-德军的密码" class="headerlink" title="22.德军的密码"></a>22.德军的密码</h2><blockquote>
+<p>已知将一个flag以一种加密形式为使用密钥进行加密，使用密钥WELCOMETOCFF加密后密文为 000000000000000000000000000000000000000000000000000101110000110001000000101000000001 请分析出flag。Flag为12位大写字母</p>
+<p>题目来源：CFF2016</p>
+</blockquote>
+<p>推测一串数字为二进制</p>
+<p>疑问就是二进制前面为什么要加那么多0  没有意义  所以思路应该不对</p>
+<p>12为大写字母为flag</p>
+<p>推测七位一组</p>
+<blockquote>
+<p>0000000  //0<br>0000000  //0<br>0000000  //0<br>0000000  //0<br>0000000  //0<br>0000000  //0<br>0000000  //0<br>0010111  //23<br>0000110  //6<br>0010000  //16<br>0010100  //20<br>0000001  //1</p>
+</blockquote>
+<p>问题在于WELCOMETOCFF是干嘛用的</p>
+<p>卒</p>
+<p><code>大佬writeup</code></p>
+<blockquote>
+<p>二战时德军使用过的一种密码，其实是利用了二进制的表示法来替代字母，也称为“费娜姆密码”</p>
+<p>A 1000001           B 1000010          C 1000011           D 1000100</p>
+<p>E 1000101           F 1000110           G 1000111           H 1001000</p>
+<p>I 1001001            J 1001010           K 1001011           L 1001100</p>
+<p>M 1001101           N 1001110           O 1001111           P 1010000</p>
+<p>Q 1010001           R 1010010           S 1010011           T 1010100</p>
+<p>U 1010101           V 1010110           W 1010111           X 1011000</p>
+<p>Y 1011001           Z 1011010</p>
+</blockquote>
+<blockquote>
+<p>密文每7个一组，与密钥进行异或处理</p>
+<p>0000000  +   W:1010111  =1010111    W</p>
+<p>0000000  +   E:1000101  =1000101    E</p>
+<p>0000000  +   L:1001100  =1001100    L</p>
+<p>0000000  +   C:1000011  =1000011    C</p>
+<p>0000000  +   O:1001111   =1001111    O</p>
+<p>0000000  +   M:1001101  =1001101    M</p>
+<p>0000000  +   E:1000101  =1000101    E</p>
+<p>0010111  +   T:1010100   =1000011    C</p>
+<p>0000110  +   O:1000011   =1001001    I</p>
+<p>0010000  +   C:1000011  =1010011     S</p>
+<p>0010100  +   F:1000110  =1010010    R</p>
+<p>0000001  +   F:1000110  =1000111    G</p>
+</blockquote>
+<blockquote>
+<p>FLAG：WELCOMECISRG</p>
+</blockquote>
+<h2 id="23-握手包"><a href="#23-握手包" class="headerlink" title="*23.握手包"></a>*23.握手包</h2><blockquote>
+<p>给你握手包，flag是Flag_is_here这个AP的密码，自己看着办吧。</p>
+<p>提交格式：flag{WIFI密码}</p>
+</blockquote>
+<p>么得usb无线网卡emmmmm</p>
+<blockquote>
+<p>Packets contained no EAPOL data; unable to process this AP.</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/09/11/jatvisjCTF-Basic/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/11/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-09-11T08:08:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/11/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常用命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/11/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">常用命令</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -226,8 +791,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
