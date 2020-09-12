@@ -70,6 +70,10 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			
+            
+    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -286,6 +290,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/09/12/about-xyel/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          about-xyel
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/09/11/61CTF-admin/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">[61CTF]admin</div>
@@ -352,7 +365,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -375,17 +388,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -415,6 +436,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">xyel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,11 +490,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://jinnizi.gitee.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>谨腻子的小破站</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://support.qq.com/products/171915/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接申请</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">xyel&lt;br&gt;&lt;br&gt;准大一萌新&lt;br&gt;信息安全专业</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;a href=&#34;/2020/09/12/about-xyel/&#34;&gt;点击访问&lt;img src=&#34;https://s2.ax1x.com/2019/08/06/eWdvwV.png&#34; alt=&#34;eWdvwV.png&#34; width=&#34;200px&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;</div>
   	  	
     	</section>
     
