@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://example.com/burp.html</loc>
+    
+    <lastmod>2020-09-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/about-xyel.html</loc>
+    
+    <lastmod>2020-09-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/Web%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8C%87%E5%8D%9704-SQL%E6%B3%A8%E5%85%A5.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/61CTF-admin.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/jarvisojCTF-localhost.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/jarvisojCTF-port51.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/jatvisjCTF-Basic.html</loc>
+    
+    <lastmod>2020-09-11</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>http://example.com/</loc>
+    <lastmod>2020-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>http://example.com/tags/CTF/</loc>
+    <lastmod>2020-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Web/</loc>
+    <lastmod>2020-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/SQL/</loc>
+    <lastmod>2020-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/xyel/</loc>
+    <lastmod>2020-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Burp/</loc>
+    <lastmod>2020-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Basic/</loc>
+    <lastmod>2020-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+</urlset>
