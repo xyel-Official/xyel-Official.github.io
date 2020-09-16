@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://xyel.ml">
   <title>sqli-lab01 | xyel的Hexo小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sqli-lab学习过程01">
+  <meta name="description" content="sqli-lab学习过程01Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqli-lab01">
 <meta property="og:url" content="https://xyel.ml/sqli-lab01.html">
 <meta property="og:site_name" content="xyel的Hexo小站">
-<meta property="og:description" content="sqli-lab学习过程01">
+<meta property="og:description" content="sqli-lab学习过程01Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-15T13:33:29.000Z">
-<meta property="article:modified_time" content="2020-09-15T16:08:26.893Z">
+<meta property="article:modified_time" content="2020-09-16T02:12:27.646Z">
 <meta property="article:author" content="xyel">
 <meta property="article:tag" content="CTF">
 <meta property="article:tag" content="Web">
@@ -171,13 +171,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="sqli-lab学习过程01"><a href="#sqli-lab学习过程01" class="headerlink" title="sqli-lab学习过程01"></a>sqli-lab学习过程01</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><a id="more"></a>
+        <h1 id="sqli-lab学习过程01"><a href="#sqli-lab学习过程01" class="headerlink" title="sqli-lab学习过程01"></a>sqli-lab学习过程01</h1><h2 id="Less-1-GET-Error-based-Single-quotes-String-基于错误的GET单引号字符型注入"><a href="#Less-1-GET-Error-based-Single-quotes-String-基于错误的GET单引号字符型注入" class="headerlink" title="Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)"></a>Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)</h2><a id="more"></a>
 
 <p>本地搭建<code>http://e.ee/s</code>作为简短的域名方便进行操作</p>
-<h3 id="Less-1-GET-Error-based-Single-quotes-String-基于错误的GET单引号字符型注入"><a href="#Less-1-GET-Error-based-Single-quotes-String-基于错误的GET单引号字符型注入" class="headerlink" title="Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)"></a>Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)</h3><p>输入?id=1后<a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=1%E5%87%BA%E7%8E%B0%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81">http://e.ee/s/Less-1/?id=1出现用户名和密码</a><br>既然是第一关  那么加<code>&#39;</code>报错<br><code>可以确定输入参数的内容被存放到一对单引号中间，</code><br><code>猜想：输入的1在数据库中出现的位置为：select...from...where id=&#39;1&#39;...</code></p>
+<p>输入?id=1后<a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=1%E5%87%BA%E7%8E%B0%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81">http://e.ee/s/Less-1/?id=1出现用户名和密码</a><br>既然是第一关  那么加<code>&#39;</code>报错<br><code>可以确定输入参数的内容被存放到一对单引号中间，</code><br><code>猜想：输入的1在数据库中出现的位置为：select...from...where id=&#39;1&#39;...</code></p>
 <p>然后试了好几次都没对<br>由于这里php的环境是本地搭建  所以可能受版本影响（推测）</p>
+<p>在更换5.2版本到5.3以后问题消失</p>
 <blockquote>
 <p>这里后面之所以要用%23是因为这里我们的url在ger方式提交的时候要进行一次url转码 所以我们要让转码后的字符为#来闭合语句</p>
+</blockquote>
+<blockquote>
+<p>一般的代码为： $id=$_GET[‘id’]; $sql=”SELECT * FROM users WHERE id=’$id’ LIMIT 0,1”; 此处考虑两个点，一个是闭合前面你的 ‘ 另一个是处理后面的 ‘ ，一般采用两种思 路，闭合后面的引号或者注释掉，注释掉采用–+ 或者 #（%23）</p>
 </blockquote>
 <p>由dalao的writeup可得</p>
 <p><a target="_blank" rel="noopener" href="http://e.ee/s/Less-1/?id=1%27%20order%20by%203">http://e.ee/s/Less-1/?id=1%27%20order%20by%203</a></p>
@@ -227,6 +231,13 @@
 <p>成功爆出字段usernamepassword字段名  0x3a： 0x是十六进制标志，3a是十进制的58，是ascii中的 ‘:’ ，用以分割pasword和username。</p>
 </blockquote>
 <p>由dalao操作可以看到直接实现了查询所有用户的username和password</p>
+<blockquote>
+<h2 id="字符串连接函数"><a href="#字符串连接函数" class="headerlink" title="字符串连接函数"></a><strong>字符串连接函数</strong></h2><ol>
+<li>concat(str1,str2,…)——没有分隔符地连接字符串</li>
+<li>concat_ws(separator,str1,str2,…)——含有分隔符地连接字符串</li>
+<li>group_concat(str1,str2,…)——连接一个组的所有字符串，并以逗号分隔每一条数据 说着比较抽象，其实也并不需要详细了解，知道这三个函数能一次性查出所有信息就行了。</li>
+</ol>
+</blockquote>
 <blockquote>
 <p>什么你说sqlmap一把梭？风太大我听不见</p>
 </blockquote>
@@ -320,6 +331,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/sqli-lab02.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          sqli-lab02
+        
+      </div>
+    </a>
   
   
     <a href="/burp.html" id="article-nav-older" class="article-nav-link-wrap">
@@ -461,11 +481,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">xyel</a>
+                <a href="javascript:void(0)" class="js-tag color5">Burp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Burp</a>
+                <a href="javascript:void(0)" class="js-tag color5">xyel</a>
               </li>
              
               <li class="article-tag-list-item">

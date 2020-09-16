@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xyel.ml/sqli-lab03&04.html</loc>
+    
+    <lastmod>2020-09-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xyel.ml/sqli-lab02.html</loc>
+    
+    <lastmod>2020-09-16</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xyel.ml/sqli-lab01.html</loc>
     
-    <lastmod>2020-09-15</lastmod>
+    <lastmod>2020-09-16</lastmod>
     
   </url>
   
@@ -60,7 +74,7 @@
 
   <url>
     <loc>https://xyel.ml/</loc>
-    <lastmod>2020-09-15</lastmod>
+    <lastmod>2020-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,42 +82,42 @@
   
   <url>
     <loc>https://xyel.ml/tags/CTF/</loc>
-    <lastmod>2020-09-15</lastmod>
+    <lastmod>2020-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Web/</loc>
-    <lastmod>2020-09-15</lastmod>
+    <lastmod>2020-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/SQL/</loc>
-    <lastmod>2020-09-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyel.ml/tags/xyel/</loc>
-    <lastmod>2020-09-15</lastmod>
+    <lastmod>2020-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Burp/</loc>
-    <lastmod>2020-09-15</lastmod>
+    <lastmod>2020-09-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyel.ml/tags/xyel/</loc>
+    <lastmod>2020-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Basic/</loc>
-    <lastmod>2020-09-15</lastmod>
+    <lastmod>2020-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
