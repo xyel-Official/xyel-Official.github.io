@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://xyel.ml/jarvisojCTF-localhost.html</loc>
+    <lastmod>2020-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://xyel.ml/%E5%B7%A6%E5%B8%88%E5%82%85%E7%9A%84Android%E5%9F%B9%E8%AE%AD.html</loc>
+    <lastmod>2020-10-18</lastmod>
+  </url>
+  <url>
     <loc>https://xyel.ml/sycsecCTF-Crypto01.html</loc>
     <lastmod>2020-10-17</lastmod>
   </url>
@@ -50,10 +58,6 @@
   </url>
   <url>
     <loc>https://xyel.ml/61CTF-admin.html</loc>
-    <lastmod>2020-09-11</lastmod>
-  </url>
-  <url>
-    <loc>https://xyel.ml/jarvisojCTF-localhost.html</loc>
     <lastmod>2020-09-11</lastmod>
   </url>
   <url>
