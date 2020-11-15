@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xyel.ml/UNCTF2020.html</loc>
+    
+    <lastmod>2020-11-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xyel.ml/jarvisojCTF-localhost.html</loc>
     
     <lastmod>2020-10-19</lastmod>
@@ -123,7 +130,7 @@
 
   <url>
     <loc>https://xyel.ml/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -131,63 +138,77 @@
   
   <url>
     <loc>https://xyel.ml/tags/CTF/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Crypto/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Misc/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Web/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xyel.ml/tags/SQL/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <loc>https://xyel.ml/tags/Pwn/</loc>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xyel.ml/tags/Burp/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <loc>https://xyel.ml/tags/Reverse/</loc>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/xyel/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyel.ml/tags/SQL/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyel.ml/tags/Burp/</loc>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Android/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Basic/</loc>
-    <lastmod>2020-10-21</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

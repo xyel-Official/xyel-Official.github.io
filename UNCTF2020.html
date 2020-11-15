@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xyel.ml">
-  <title>0xCTF-Web | xyel的Hexo小站</title>
+  <title>UNCTF2020 | xyel的Hexo小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0xCTF-Web这个很简单 我可以自己写writeup了233333333  http:&#x2F;&#x2F;game.0xctf.com&#x2F;challenges">
+  <meta name="description" content="UNCTF2020 校内赛wphttps:&#x2F;&#x2F;unctf.hackingfor.fun&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="0xCTF-Web">
-<meta property="og:url" content="https://xyel.ml/0xCTF-Web.html">
+<meta property="og:title" content="UNCTF2020">
+<meta property="og:url" content="https://xyel.ml/UNCTF2020.html">
 <meta property="og:site_name" content="xyel的Hexo小站">
-<meta property="og:description" content="0xCTF-Web这个很简单 我可以自己写writeup了233333333  http:&#x2F;&#x2F;game.0xctf.com&#x2F;challenges">
+<meta property="og:description" content="UNCTF2020 校内赛wphttps:&#x2F;&#x2F;unctf.hackingfor.fun&#x2F;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-01T03:55:02.000Z">
-<meta property="article:modified_time" content="2020-10-01T04:02:11.409Z">
+<meta property="article:published_time" content="2020-11-11T10:47:28.000Z">
+<meta property="article:modified_time" content="2020-11-14T05:12:54.114Z">
 <meta property="article:author" content="xyel">
 <meta property="article:tag" content="CTF">
+<meta property="article:tag" content="Crypto">
+<meta property="article:tag" content="Misc">
 <meta property="article:tag" content="Web">
+<meta property="article:tag" content="Pwn">
+<meta property="article:tag" content="Reverse">
 <meta name="twitter:card" content="summary">
   
   
@@ -150,52 +154,184 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-0xCTF-Web" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-UNCTF2020" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      0xCTF-Web
+      UNCTF2020
     </h1>
   
 
         
-        <a href="/0xCTF-Web.html" class="archive-article-date">
-  	<time datetime="2020-10-01T03:55:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-01</time>
+        <a href="/UNCTF2020.html" class="archive-article-date">
+  	<time datetime="2020-11-11T10:47:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="0xCTF-Web"><a href="#0xCTF-Web" class="headerlink" title="0xCTF-Web"></a>0xCTF-Web</h1><p>这个很简单 我可以自己写writeup了233333333</p>
-<p> <a target="_blank" rel="noopener" href="http://game.0xctf.com/challenges">http://game.0xctf.com/challenges</a></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><a id="more"></a>
+        <h1 id="UNCTF2020-校内赛wp"><a href="#UNCTF2020-校内赛wp" class="headerlink" title="UNCTF2020 校内赛wp"></a>UNCTF2020 校内赛wp</h1><h2 id="https-unctf-hackingfor-fun"><a href="#https-unctf-hackingfor-fun" class="headerlink" title="https://unctf.hackingfor.fun/"></a><a target="_blank" rel="noopener" href="https://unctf.hackingfor.fun/">https://unctf.hackingfor.fun/</a></h2><a id="more"></a>
 
-<h3 id="robots协议-442pts"><a href="#robots协议-442pts" class="headerlink" title="robots协议 442pts"></a>robots协议 442pts</h3><blockquote>
-<p>你知道robots协议是什么吗？</p>
-<p><a target="_blank" rel="noopener" href="http://web.game.0xctf.com:30051/">http://web.game.0xctf.com:30051/</a></p>
+<h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p>我堂堂一个Web手，居然除了Web雨露均沾了</p>
+<p>还有还有  俄罗斯方块很好玩  手动狗头</p>
+<h3 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h3><h4 id="YLBNB"><a href="#YLBNB" class="headerlink" title="YLBNB"></a>YLBNB</h4><blockquote>
+<p>守护世界上最好的YLB nc 45.158.33.12 8000</p>
 </blockquote>
-<p>众所周知robots.txt</p>
+<p>这道题误打误撞的  没有用nc  直接用http访问</p>
+<p>Payload</p>
 <blockquote>
-<p>User-agent: *<br>Allow: /<br>User-agent: CTFer<br>Disallow: /flaaaggg.php</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="http://web.game.0xctf.com:30051//flaaaggg.php">http://web.game.0xctf.com:30051//flaaaggg.php</a></p>
-<blockquote>
-<p>flag: 0xGame{now_you_k0nw_robots_Protocol}</p>
-</blockquote>
-<h3 id="view-source-421pts"><a href="#view-source-421pts" class="headerlink" title="view_source 421pts"></a>view_source 421pts</h3><blockquote>
-<p>flag究竟在哪里呢？</p>
-<p><a target="_blank" rel="noopener" href="http://web.game.0xctf.com:30053/">http://web.game.0xctf.com:30053/</a></p>
-</blockquote>
-<p>既然你都说view_source了那</p>
-<blockquote>
-<p>view-source:<a target="_blank" rel="noopener" href="http://web.game.0xctf.com:30053/">http://web.game.0xctf.com:30053/</a></p>
+<p><a target="_blank" rel="noopener" href="http://45.158.33.12:8000/">http://45.158.33.12:8000/</a></p>
 </blockquote>
 <blockquote>
-<p>flag: 0xGame{web_sign_in}</p>
+<p> Use pwntools! Type ‘chcp 65001’ to use UTF-8 for Windows<br>为YLB打CALL <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/423279955">https://www.zhihu.com/question/423279955</a><br>UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: ylb：对于大家在比赛中的问题，我们会与组委会商议， 某师傅：请问您知道我们遇到了什么问题吗？ 某师傅：请问您知道有哪些队伍遇到了问题吗？ 某师傅：那您怎么与组委会商议呢？<br>UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: 一awd产品开发行道散步，不慎落入道旁河中，高呼救命！两选手闻之，视若不见，仍边走边谈笑如故。 产品经理情急生智，遂高呼“我们将在提交flag时加入验证码”！ 两选手闻之大惊，急跳入河中，将产品拖上岸来铐之。<br>UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: 验证码都敲来不及还有空攻击您的平台？<br>UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: 请不要再给ylb压力了<br>UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: 每日一问：ylb倒闭了吗?<br>UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: 这波啊，这波是ctf春晚<br>UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: 比赛不让连外网怎么办？开WIFI。WIFI要被发现怎么办？改名为ylbnb<br>UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: 某赛竞标会议上，主持人突然说：请下面认为AWD+赛制好的同志坐到会场的左边，认为AWD原版赛制好的同志坐到会场右边。 大部分人坐到了左边，少数人坐到右边，只有易霖博坐在中间不动。 主持人：那位同志，你到底认为plus好还是原版好 易霖博：我认为原版好，但选手交flag频率得和plus一样 主持人慌忙说：那请您赶快坐到主席台上来<br>UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: 每个人都不能保证自己是完美的，一次都不犯错。但目前还没有哪家公司能比贵公司每场都烂吧<br> UNCTF{Gu@rd_Th3_Bes7_YLB} #YLBNB: 请不要再给ylb压力了 </p>
+</blockquote>
+<p>易霖博nb</p>
+<blockquote>
+<p>UNCTF{Gu@rd_Th3_Bes7_YLB} </p>
+</blockquote>
+<h3 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h3><h4 id="re-checkin"><a href="#re-checkin" class="headerlink" title="re_checkin"></a>re_checkin</h4><blockquote>
+<p>二进制手做不出来这个就考虑退役吧</p>
+</blockquote>
+<p>ida64打开 hex-view</p>
+<p>在最上面读出如下</p>
+<blockquote>
+<p>00000000004015E5  05 55 DA 02 00 75 C6 05  4F DA 02 00 6E C6 05 49  .U…u..O…n..I<br>00000000004015F5  DA 02 00 63 C6 05 43 DA  02 00 74 C6 05 3D DA 02  …c..C…t..=..<br>0000000000401605  00 66 C6 05 37 DA 02 00  7B C6 05 31 DA 02 00 57  .f..7…{..1…W<br>0000000000401615  C6 05 2B DA 02 00 65 C6  05 25 DA 02 00 6C C6 05  ..+…e..%…l..<br>0000000000401625  1F DA 02 00 63 C6 05 19  DA 02 00 6F C6 05 13 DA  ….c……o….<br>0000000000401635  02 00 6D C6 05 0D DA 02  00 65 C6 05 07 DA 02 00  ..m……e……<br>0000000000401645  54 C6 05 01 DA 02 00 6F  C6 05 FB D9 02 00 55 C6  T……o……U.<br>0000000000401655  05 F5 D9 02 00 4E C6 05  EF D9 02 00 43 C6 05 E9  …..N……C…<br>0000000000401665  D9 02 00 54 C6 05 E3 D9  02 00 46 C6 05 DD D9 02  …T……F…..<br>0000000000401675  00 7D C6 05 D7 D9 02 00  00 90 5D C3 55 56 53 48  .}……..].UVSH</p>
+</blockquote>
+<p>从一堆乱七八糟的东西里面读出flag</p>
+<blockquote>
+<p>unctf{WelcomeToUNCTF}</p>
+</blockquote>
+<h3 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h3><h4 id="鞍山大法官开庭之缺的营养这一块怎么补"><a href="#鞍山大法官开庭之缺的营养这一块怎么补" class="headerlink" title="鞍山大法官开庭之缺的营养这一块怎么补"></a>鞍山大法官开庭之缺的营养这一块怎么补</h4><blockquote>
+<p>某日，鞍山大法官在点外卖时点了2个韭菜盒子，商家只送了1个，大法官给了该商家一个差评 次日，该大法官又在该商家点了1个韭菜盒子，希望商家能补上上次的韭菜盒子，而商家又只发了一个韭菜盒子 这名大法官一天正常要吃2个韭菜盒子，而该商家每天只给他1个韭菜盒子，请问该名大法官缺的营养这一块怎么补 ottttootoootooooottoootooottotootttootooottotttooootttototoottooootoooottotoottottooooooooottotootto </p>
+<p>flag格式：unctf{}</p>
+</blockquote>
+<p>ot两种字母  同理成01或者是ab</p>
+<p>想到培根  果然  五个一组解密  flag{}中内容全大写</p>
+<blockquote>
+<p>unctf{PEIGENHENYOUYINGYANG}</p>
+</blockquote>
+<h4 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h4><p>是 最(hun) 爱(fen) 的misc</p>
+<h4 id="baba-is-you"><a href="#baba-is-you" class="headerlink" title="baba_is_you"></a>baba_is_you</h4><blockquote>
+<p>了解一下png文件格式</p>
+</blockquote>
+<p>图片最尾端插入了b站地址<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1y44111737">https://www.bilibili.com/video/BV1y44111737</a></p>
+<blockquote>
+<p>unctf{let’s_study_pwn}</p>
+</blockquote>
+<h4 id="爷的历险记"><a href="#爷的历险记" class="headerlink" title="爷的历险记"></a>爷的历险记</h4><p>RPG小游戏 爷把flag弄丢了, 你可以帮他找回来吗</p>
+<p>扒目录  打开CommonEvents.json</p>
+<blockquote>
+<p>UNCTF{WelC0me_70_UNCTF2oZ0~}</p>
+</blockquote>
+<h4 id="阴阳人编码"><a href="#阴阳人编码" class="headerlink" title="阴阳人编码"></a>阴阳人编码</h4><p>看到.!?想到Ook编码</p>
+<p>将 不会吧 就这 替换成Ook  翻转问号替换成?</p>
+<p>在线解密<a target="_blank" rel="noopener" href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
+<blockquote>
+<p>flag{9_zhe_Jiu_zhe_8_hui_8}</p>
+</blockquote>
+<h4 id="YLB’s-CAPTCHA-签到题"><a href="#YLB’s-CAPTCHA-签到题" class="headerlink" title="YLB’s CAPTCHA - 签到题"></a>YLB’s CAPTCHA - 签到题</h4><blockquote>
+<p>YLB同款验证码</p>
+</blockquote>
+<p>用放大镜放大到400%  避开liI1 0Oo等</p>
+<p>连中十次得到flag</p>
+<blockquote>
+<p>UNCTF{0dc2d08d-00fb-43af-a165-ef77fb4c76d7}</p>
+</blockquote>
+<h4 id="躲猫猫"><a href="#躲猫猫" class="headerlink" title="躲猫猫"></a>躲猫猫</h4><blockquote>
+<p>我躲好了，你来找我</p>
+</blockquote>
+<p>xlsx打不开  第一反应是金山文档修复 （打钱！）</p>
+<p>然后发现要会员（反向宣传）</p>
+<p>于是去扒了文件</p>
+<p>发现了这个sharedStrings.xml</p>
+<blockquote>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p><sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="2" uniqueCount="2"><si><t>dW5jdGYlN0I3MzgzYjY3ZGU5MTA2YTZmMTBmZGJlNGU4ZWJjNjRjZSU3RA==</t><phoneticPr fontId="1" type="noConversion"/></si><si><t>你居然把猫猫移开了，但是你也找不到flag</t><phoneticPr fontId="1" type="noConversion"/></si></sst></p>
+</blockquote>
+<p>base64解码得</p>
+<blockquote>
+<p>unctf%7B7383b67de9106a6f10fdbe4e8ebc64ce%7D</p>
+</blockquote>
+<p>%7B和%7D是url编码  修改为大括号</p>
+<blockquote>
+<p>unctf{7383b67de9106a6f10fdbe4e8ebc64ce}</p>
+</blockquote>
+<h4 id="网络深处1"><a href="#网络深处1" class="headerlink" title="网络深处1"></a>网络深处1</h4><blockquote>
+<p>好孩子不要上洋葱鸭</p>
+</blockquote>
+<p>还真以为会要洋葱浏览器呢hhhhhhhg</p>
+<p>首先是DTMF</p>
+<p>使用Audacity获取拨号音的频谱图</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1209Hz</th>
+<th>1336Hz</th>
+<th>1477Hz</th>
+<th>1633Hz</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>697Hz</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>A</td>
+</tr>
+<tr>
+<td>770Hz</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>B</td>
+</tr>
+<tr>
+<td>852Hz</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>C</td>
+</tr>
+<tr>
+<td>941Hz</td>
+<td>*</td>
+<td>0</td>
+<td>#</td>
+<td>D</td>
+</tr>
+</tbody></table>
+<p>15975384265（广东广州移动）</p>
+<p>感谢这个手机号主为UNCTF2020做出的卓越贡献（手动滑稽）</p>
+<p>解压</p>
+<p>音频2为沙沙声  推测为频谱图隐写</p>
+<p>频谱图看到<code>我是tupper</code></p>
+<p>愣了我好久  在百度杯CTF看到了有关信息</p>
+<p>又科学上网上了wiki看了塔珀自指公式</p>
+<p>在引用链接中看到在线js（同样需要科学上网）</p>
+<p><a target="_blank" rel="noopener" href="https://web.archive.org/web/20181021055213/http://tuppers-formula.tk/">https://web.archive.org/web/20181021055213/http://tuppers-formula.tk/</a></p>
+<p>得到flag</p>
+<blockquote>
+<p>flag{Y29pbA==}</p>
+</blockquote>
+<p>base64解码后为coil  出题人的名字  好一个伏笔  洋葱呢（手动滑稽）</p>
+<h4 id="撕坏的二维码"><a href="#撕坏的二维码" class="headerlink" title="撕坏的二维码"></a>撕坏的二维码</h4><p><a target="_blank" rel="noopener" href="https://merricx.github.io/qrazybox/">https://merricx.github.io/qrazybox/</a></p>
+<p>补齐四角  decode</p>
+<blockquote>
+<p>unctf{QR@2yB0x}</p>
+</blockquote>
+<h4 id="被删除的flag"><a href="#被删除的flag" class="headerlink" title="被删除的flag"></a>被删除的flag</h4><blockquote>
+<p>flag被删除了，你能恢复它吗</p>
+</blockquote>
+<p>txt打开文件 发现里面有mnt  怀疑应该是一个磁盘文件</p>
+<p>可是我还没有尝试折腾它  就在下面看到了flag</p>
+<p>啊这</p>
+<blockquote>
+<p>unctf{congratulations!}</p>
 </blockquote>
 
       
@@ -214,7 +350,23 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Crypto</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Misc</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Pwn</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Reverse</a>
         		</li>
       		
 		</ul>
@@ -270,7 +422,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/0xCTF-Web.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/UNCTF2020.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +436,9 @@
   
 <nav id="article-nav">
   
-    <a href="/0xCTF-Misc.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          0xCTF-Misc
-        
-      </div>
-    </a>
   
-  
-    <a href="/sqli-lab03-04.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">sqli-lab03&amp;04</div>
+    <a href="/%E5%B7%A6%E5%B8%88%E5%82%85%E7%9A%84Android%E5%9F%B9%E8%AE%AD.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">左师傅的Android培训</div>
       <i class="icon-circle-right"></i>
     </a>
   
