@@ -130,7 +130,7 @@
 
   <url>
     <loc>https://xyel.ml/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -138,77 +138,77 @@
   
   <url>
     <loc>https://xyel.ml/tags/CTF/</loc>
-    <lastmod>2020-11-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyel.ml/tags/Crypto/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Misc/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyel.ml/tags/Crypto/</loc>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Web/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Pwn/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Reverse/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/SQL/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/xyel/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Burp/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Android/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Basic/</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
