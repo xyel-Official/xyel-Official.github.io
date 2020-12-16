@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://xyel.ml/about-xyel.html</loc>
-    <lastmod>2020-11-19</lastmod>
+    <lastmod>2020-12-16</lastmod>
+  </url>
+  <url>
+    <loc>https://xyel.ml/buuoj-Web.html</loc>
+    <lastmod>2020-12-13</lastmod>
   </url>
   <url>
     <loc>https://xyel.ml/UNCTF2020.html</loc>
