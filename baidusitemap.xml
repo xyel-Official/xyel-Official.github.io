@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://xyel.ml/about-xyel.html</loc>
-    <lastmod>2020-12-16</lastmod>
+    <loc>https://xyel.ml/buuoj-Web2.html</loc>
+    <lastmod>2021-04-01</lastmod>
   </url>
   <url>
     <loc>https://xyel.ml/buuoj-Web.html</loc>
-    <lastmod>2020-12-13</lastmod>
+    <lastmod>2021-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://xyel.ml/about-xyel.html</loc>
+    <lastmod>2020-12-16</lastmod>
   </url>
   <url>
     <loc>https://xyel.ml/UNCTF2020.html</loc>
