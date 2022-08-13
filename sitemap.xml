@@ -53,7 +53,7 @@
 
   <url>
     <loc>https://xyel.ml/</loc>
-    <lastmod>2021-09-19</lastmod>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,56 +61,56 @@
   
   <url>
     <loc>https://xyel.ml/tags/Book/</loc>
-    <lastmod>2021-09-19</lastmod>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Knowledge/</loc>
-    <lastmod>2021-09-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyel.ml/tags/Web/</loc>
-    <lastmod>2021-09-19</lastmod>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/SQLI-Lab/</loc>
-    <lastmod>2021-09-19</lastmod>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/Pikachu-master/</loc>
-    <lastmod>2021-09-19</lastmod>
+    <lastmod>2022-08-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyel.ml/tags/Web/</loc>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/xyel/</loc>
-    <lastmod>2021-09-19</lastmod>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/CTF-Record/</loc>
-    <lastmod>2021-09-19</lastmod>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://xyel.ml/tags/PHP/</loc>
-    <lastmod>2021-09-19</lastmod>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
